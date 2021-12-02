@@ -1,0 +1,13 @@
+.navbar {
+    height: 4rem;
+    background: #8C6542;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-title {
+    font-family: Henny Penny;
+    font-size: 2.5rem;
+    color: #F2A341;
+    text-decoration: none;
+}

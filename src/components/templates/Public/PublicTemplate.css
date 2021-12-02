@@ -1,0 +1,21 @@
+.public-template-container {
+    background-color: #D9C2A7;
+}
+
+.public-template-title {
+    font-family: Henny Penny;
+    font-size: 4rem;
+    color: #8C6542;
+    -webkit-text-stroke: #730217 1px;
+    margin-top: 40%;
+    text-align: center;
+}
+
+.public-template-content {
+    margin: 10% 10%;
+    font-family: Roboto;    
+    line-height: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #730217;
+}

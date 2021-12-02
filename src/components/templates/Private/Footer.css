@@ -1,0 +1,6 @@
+.footer {
+    height: 4rem;
+    background: #8C6542;
+    display: flex;
+    justify-content: center;
+}
