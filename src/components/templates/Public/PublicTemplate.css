@@ -1,5 +1,8 @@
 .public-template-container {
     background-color: #D9C2A7;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;    
 }
 
 .public-template-title {
@@ -8,14 +11,13 @@
     color: #8C6542;
     -webkit-text-stroke: #730217 1px;
     margin-top: 40%;
-    text-align: center;
+    text-align: center;    
 }
 
-.public-template-content {
+.public-template-subtitle {
     margin: 10% 10%;
-    font-family: Roboto;    
-    line-height: 20px;
-    text-align: center;
+    font-family: Roboto;
     font-size: 1.2rem;
     color: #730217;
+    text-align: center;    
 }

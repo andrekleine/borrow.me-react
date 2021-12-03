@@ -5,10 +5,9 @@ import './PublicTemplate.css';
 
 const PublicTemplate = ({ children }) => (
   <div className="public-template-container">
-    <div className="public-template-title">
-      <h1>Borrow.me</h1>
-      <h3>Connect with people and books in a great community</h3>
-    </div>
+    <h1 className="public-template-title">Borrow.me</h1>
+    <h3 className="public-template-subtitle">Connect with people and books in a great community</h3>
+
     <div className="public-template-content">{children}</div>
   </div>
 );
