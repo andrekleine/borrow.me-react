@@ -7,9 +7,9 @@
 
 .public-template-title {
     font-family: Henny Penny;
-    font-size: 4rem;
+    font-size: 4rem;    
     color: #8C6542;
-    -webkit-text-stroke: #730217 1px;
+    -webkit-text-stroke: #730217 1.2px;
     margin-top: 40%;
     text-align: center;    
 }
@@ -18,6 +18,7 @@
     margin: 10% 10%;
     font-family: Roboto;
     font-size: 1.2rem;
+    font-weight: bold;
     color: #730217;
     text-align: center;    
 }

@@ -1,0 +1,31 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 12rem;
+}
+
+.form-group {
+    width: 80%;
+}
+
+.form-field {
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+
+.my-login-button {
+    width: 30%;
+    height: 40px;
+    background: #F2A341;
+    border-radius: 5px;
+    color: #730217;
+    border: none;
+}
+
+.feedback {
+    margin: 0;
+    padding: 0;
+}
