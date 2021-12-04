@@ -52,56 +52,63 @@ const Login = ({ loginUser }) => {
   return (
     <PublicTemplate>
       <Form onSubmit={handleSubmit} className="form">
-        <Form.Group
-          as={Col}
-          md="12"
-          controlId="login-form"
-          className="form-group"
-        >
-          <Form.Control
-            className="form-field"
-            type="text"
-            name="email"
-            placeholder="E-mail"
-            value={values.email}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            isValid={touched.email && !errors.email}
-            isInvalid={touched.email && errors.email}
-          />
-          <Form.Control.Feedback>Ok!</Form.Control.Feedback>
-          <Form.Control.Feedback type="invalid">
-            {errors.email}
-          </Form.Control.Feedback>
-        </Form.Group>
+        <div className="form-fields">
+          <Form.Group
+            as={Col}
+            md="12"
+            controlId="login-form"
+            className="form-group"
+          >
+            <Form.Control
+              className="form-one-field"
+              type="text"
+              name="email"
+              placeholder="E-mail"
+              value={values.email}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              isValid={touched.email && !errors.email}
+              isInvalid={touched.email && errors.email}
+            />
+            <Form.Control.Feedback>Ok!</Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid">
+              {errors.email}
+            </Form.Control.Feedback>
+          </Form.Group>
 
-        <Form.Group
-          as={Col}
-          md="12"
-          controlId="login-form"
-          className="form-group"
-        >
-          <Form.Control
-            className="form-field"
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={values.password}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            isValid={touched.password && !errors.password}
-            isInvalid={touched.password && errors.password}
-          />
-          <Form.Control.Feedback className="feedback">
-            Ok!
-          </Form.Control.Feedback>
-          <Form.Control.Feedback className="feedback" type="invalid">
-            {errors.password}
-          </Form.Control.Feedback>
-        </Form.Group>
+          <Form.Group
+            as={Col}
+            md="12"
+            controlId="login-form"
+            className="form-group"
+          >
+            <Form.Control
+              className="form-one-field"
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={values.password}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              isValid={touched.password && !errors.password}
+              isInvalid={touched.password && errors.password}
+            />
+            <Form.Control.Feedback className="feedback">
+              Ok!
+            </Form.Control.Feedback>
+            <Form.Control.Feedback className="feedback" type="invalid">
+              {errors.password}
+            </Form.Control.Feedback>
+          </Form.Group>
+        </div>
 
-        <button type="submit" className="my-login-button">
-          Login
+        <div className="login-button-container">
+          <button type="submit" className="login-button">
+            Login
+          </button>
+        </div>
+        <button type="submit" className="register-button">
+          Register
         </button>
       </Form>
     </PublicTemplate>
