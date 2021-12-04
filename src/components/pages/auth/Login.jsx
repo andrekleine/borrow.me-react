@@ -13,7 +13,7 @@ import './Login.css';
 
 const loginSchema = yup.object().shape({
   email: yup.string().required().email(),
-  password: yup.string().required().max(),
+  password: yup.string().required().max(150),
 });
 
 const Login = ({ loginUser }) => {

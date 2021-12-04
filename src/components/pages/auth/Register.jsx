@@ -9,8 +9,6 @@ import PublicTemplate from '../../templates/Public/PublicTemplate';
 
 import { register, login } from '../../../services/api';
 
-import './Register.css';
-
 const registerSchema = yup.object().shape({
   name: yup.string().required().min(3).max(100),
   email: yup.string().required().email(),
@@ -77,6 +75,7 @@ const Register = () => {
               {errors.name}
             </Form.Control.Feedback>
           </Form.Group>
+
           <Form.Group
             as={Col}
             md="12"
