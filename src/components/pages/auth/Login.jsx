@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 
@@ -107,9 +107,11 @@ const Login = ({ loginUser }) => {
             Login
           </button>
         </div>
-        <button type="submit" className="register-button">
-          Register
-        </button>
+        <Link to="/register">
+          <button type="button" className="register-button">
+            Register
+          </button>
+        </Link>
       </Form>
     </PublicTemplate>
   );
