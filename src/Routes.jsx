@@ -6,6 +6,8 @@ import Register from './components/pages/auth/Register';
 
 import ProtectedRoute from './components/misc/ProtectedRoute';
 
+import Home from './components/pages/home/Home';
+
 // import MyProjects from './components/pages/MyProjects/MyProjects';
 // import ProjectDetails from './components/pages/ProjectDetails/ProjectDetails';
 
