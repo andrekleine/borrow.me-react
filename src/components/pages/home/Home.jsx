@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
+import 'swiper/swiper.min.css';
 
 import './Home.css';
 import PrivateTemplate from '../../templates/Private/PrivateTemplate';
@@ -28,11 +30,20 @@ const Home = () => {
     <PrivateTemplate>
       <h1>Last Books Friends Read:</h1>
       <div className="container">
-        <div className="item">
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={3}
+          onSlideChange={() => console.log('slide change')}
+          onSwiper={(swiper) => console.log(swiper)}
+        >
           {lastBooksReadFriends.map((bookObj) => {
-            return <img src={bookObj.imgLink} alt="Minha Figura" />;
+            return (
+              <SwiperSlide>
+                <img src={bookObj.imgLink} alt="Minha Figura" />
+              </SwiperSlide>
+            );
           })}
-        </div>
+        </Swiper>
       </div>
     </PrivateTemplate>
   );
