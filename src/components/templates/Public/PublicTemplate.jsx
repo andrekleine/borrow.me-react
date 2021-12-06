@@ -12,8 +12,8 @@ const PublicTemplate = ({ children }) => (
   </div>
 );
 
-// PublicTemplate.propTypes = {
-//   children: PropTypes.node.isRequired,
-// };
+PublicTemplate.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default PublicTemplate;

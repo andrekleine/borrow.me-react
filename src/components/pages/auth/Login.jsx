@@ -56,7 +56,7 @@ const Login = ({ loginUser }) => {
           <Form.Group
             as={Col}
             md="12"
-            controlId="login-form"
+            controlId="login-form-email"
             className="form-group"
           >
             <Form.Control
@@ -79,7 +79,7 @@ const Login = ({ loginUser }) => {
           <Form.Group
             as={Col}
             md="12"
-            controlId="login-form"
+            controlId="login-form-password"
             className="form-group"
           >
             <Form.Control

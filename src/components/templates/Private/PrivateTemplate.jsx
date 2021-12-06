@@ -14,8 +14,8 @@ const PrivateTemplate = ({ children }) => (
   </div>
 );
 
-// PrivateTemplate.propTypes = {
-//   children: PropTypes.node.isRequired,
-// };
+PrivateTemplate.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default PrivateTemplate;
