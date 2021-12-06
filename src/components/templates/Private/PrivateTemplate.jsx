@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -14,8 +14,8 @@ const PrivateTemplate = ({ children }) => (
   </div>
 );
 
-PrivateTemplate.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+// PrivateTemplate.propTypes = {
+//   children: PropTypes.node.isRequired,
+// };
 
 export default PrivateTemplate;

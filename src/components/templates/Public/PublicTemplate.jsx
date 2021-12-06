@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 import './PublicTemplate.css';
 
@@ -12,8 +12,8 @@ const PublicTemplate = ({ children }) => (
   </div>
 );
 
-PublicTemplate.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+// PublicTemplate.propTypes = {
+//   children: PropTypes.node.isRequired,
+// };
 
 export default PublicTemplate;

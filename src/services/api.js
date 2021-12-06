@@ -36,11 +36,8 @@ export const register = async (formData) => {
 };
 
 //
-export const getProjects = async (searchTitle, token) => {
-  const response = await api.get(
-    `/projects?title=${searchTitle}`,
-    setHeaders(token),
-  );
+export const home = async (token) => {
+  const response = await api.get('/books', setHeaders(token));
 
   return response.data;
 };
@@ -61,7 +58,7 @@ export const createOneTask = async (projectId, body, token) => {
   const response = await api.post(
     `/tasks/${projectId}`,
     body,
-    setHeaders(token),
+    setHeaders(token)
   );
 
   return response.data;
