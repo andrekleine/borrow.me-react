@@ -24,11 +24,6 @@
     margin-bottom: 35px;
 }
 
-.feedback {
-    margin: 0;
-    padding: 0;
-}
-
 .login-button-container {
     display: flex;
     justify-content: center;
@@ -47,7 +42,7 @@
     border: none;
 }
 
-.register-button {    
+.register-button {
     width: 120px;
     height: 40px;
     background: #8C6542;
@@ -55,4 +50,14 @@
     border: none;
     margin-top: 32px;
     color: white;
+}
+
+.form-group {
+    position: relative
+}
+
+.feedback {
+    position: absolute;
+    top: 35px;
+    left: 5px;
 }

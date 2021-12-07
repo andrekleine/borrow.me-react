@@ -70,8 +70,8 @@ const Register = () => {
               isValid={touched.name && !errors.name}
               isInvalid={touched.name && errors.name}
             />
-            <Form.Control.Feedback>Ok!</Form.Control.Feedback>
-            <Form.Control.Feedback type="invalid">
+            <Form.Control.Feedback className="feedback">Ok!</Form.Control.Feedback>
+            <Form.Control.Feedback className="feedback" type="invalid">
               {errors.name}
             </Form.Control.Feedback>
           </Form.Group>
@@ -93,8 +93,8 @@ const Register = () => {
               isValid={touched.email && !errors.email}
               isInvalid={touched.email && errors.email}
             />
-            <Form.Control.Feedback>Ok!</Form.Control.Feedback>
-            <Form.Control.Feedback type="invalid">
+            <Form.Control.Feedback className="feedback">Ok!</Form.Control.Feedback>
+            <Form.Control.Feedback className="feedback" type="invalid">
               {errors.email}
             </Form.Control.Feedback>
           </Form.Group>

@@ -70,8 +70,8 @@ const Login = ({ loginUser }) => {
               isValid={touched.email && !errors.email}
               isInvalid={touched.email && errors.email}
             />
-            <Form.Control.Feedback>Ok!</Form.Control.Feedback>
-            <Form.Control.Feedback type="invalid">
+            <Form.Control.Feedback className="feedback">Ok!</Form.Control.Feedback>
+            <Form.Control.Feedback className="feedback" type="invalid">
               {errors.email}
             </Form.Control.Feedback>
           </Form.Group>
