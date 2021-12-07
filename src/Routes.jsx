@@ -7,6 +7,7 @@ import Register from './components/pages/auth/Register';
 import ProtectedRoute from './components/misc/ProtectedRoute';
 
 import Home from './components/pages/home/Home';
+import Search from './components/pages/search/Search';
 
 // import MyProjects from './components/pages/MyProjects/MyProjects';
 // import ProjectDetails from './components/pages/ProjectDetails/ProjectDetails';
@@ -32,6 +33,10 @@ const appRoutes = () => {
       <Route
         path="/books"
         element={<ProtectedRoute isLogged={isUserLogged} Page={Home} />}
+      />
+      <Route
+        path="/search"
+        element={<ProtectedRoute isLogged={isUserLogged} Page={Search} />}
       />
     </Routes>
   );
