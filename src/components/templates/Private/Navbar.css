@@ -1,8 +1,15 @@
-.navbar {
+.navbar-brand {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;    
+    top: 0;    
+    width: 100%;    
     height: 4rem;
     background: #8C6542;
     display: flex;
     justify-content: center;
+    /* Fix book images passing over navbar */
+    z-index: 300;
 }
 
 .navbar-title {

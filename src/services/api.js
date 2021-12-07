@@ -58,7 +58,7 @@ export const createOneTask = async (projectId, body, token) => {
   const response = await api.post(
     `/tasks/${projectId}`,
     body,
-    setHeaders(token)
+    setHeaders(token),
   );
 
   return response.data;

@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <nav className="navbar">
-      <Link className="navbar-title" to="www.google.com">
+    <nav className="navbar-brand">
+      <Link className="navbar-title" to="/books">
         Borrow.me
       </Link>
     </nav>

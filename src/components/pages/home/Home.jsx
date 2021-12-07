@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
-import 'swiper/swiper.min.css';
-
+import SectionRow from './SectionRow';
 import './Home.css';
 import PrivateTemplate from '../../templates/Private/PrivateTemplate';
 
@@ -22,28 +20,19 @@ const Home = () => {
         setLastBooksIRead(response[2]);
       })
       .catch((err) => {
-        console.log(err);
+        throw err;
       });
   }, []);
 
   return (
     <PrivateTemplate>
-      <h1>Last Books Friends Read:</h1>
-      <div className="container">
-        <Swiper
-          spaceBetween={50}
-          slidesPerView={3}
-          onSlideChange={() => console.log('slide change')}
-          onSwiper={(swiper) => console.log(swiper)}
-        >
-          {lastBooksReadFriends.map((bookObj) => {
-            return (
-              <SwiperSlide>
-                <img src={bookObj.imgLink} alt="Minha Figura" />
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
+      <div className="home-container">
+        <SectionRow title="New from friends" bookArray={lastBooksReadFriends} />
+        <SectionRow
+          title="Friends will lend"
+          bookArray={lastBooksFriendsLend}
+        />
+        <SectionRow title="I read lately" bookArray={lastBooksIRead} />
       </div>
     </PrivateTemplate>
   );

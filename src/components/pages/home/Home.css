@@ -1,0 +1,32 @@
+.home-container {
+    margin-top: 75px;
+}
+
+.section-title {
+    color: #730217;
+    font-size: 2.4vh;
+    font-family: "Roboto";
+    margin: 20px 10px 8px;
+}
+
+.section-row {
+    margin-top: 15px;
+}
+
+.book-container-width {
+    display: flex;
+    justify-content: center;
+    width: 14vh;    
+}
+
+.book-container-height {
+    height: 20vh;        
+    object-fit: 2ill;
+}
+
+.book-cover {
+    max-height: 20vh;
+    width: 15vh;
+    object-fit: cover;    
+    border-radius: 5px;    
+}
