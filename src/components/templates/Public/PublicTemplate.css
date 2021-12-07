@@ -10,12 +10,12 @@
     font-size: 4rem;    
     color: #8C6542;
     -webkit-text-stroke: #730217 1.2px;
-    margin-top: 40%;
+    margin-top: 15vh;
     text-align: center;    
 }
 
 .public-template-subtitle {
-    margin: 10% 10%;
+    margin: 9vw;
     font-family: Roboto;
     font-size: 1.2rem;
     font-weight: bold;
