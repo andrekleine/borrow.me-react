@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <nav className="navbar fixed-bottom footer">
-      <Link className="footer-title" to="www.google.com">
+      <Link className="footer-title" to="/search">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="32"
