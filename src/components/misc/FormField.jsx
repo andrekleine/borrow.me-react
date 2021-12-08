@@ -10,6 +10,7 @@ const FormField = ({
   required,
   hint,
   placeholder,
+  className,
 }) => {
   return (
     <div className="mb-3">
@@ -18,7 +19,7 @@ const FormField = ({
       </label>
       <input
         type={type}
-        className="form-control"
+        className={className}
         id={id}
         name={name}
         onChange={onChange}

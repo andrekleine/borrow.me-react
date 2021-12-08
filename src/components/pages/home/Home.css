@@ -1,7 +1,3 @@
-.home-container {
-    margin-top: 75px;
-}
-
 .section-title {
     color: #730217;
     font-size: 2.4vh;
@@ -21,7 +17,7 @@
 
 .book-container-height {
     height: 20vh;        
-    object-fit: 2ill;
+    object-fit: fill;
 }
 
 .book-cover {

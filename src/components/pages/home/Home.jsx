@@ -26,14 +26,9 @@ const Home = () => {
 
   return (
     <PrivateTemplate>
-      <div className="home-container">
-        <SectionRow title="New from friends" bookArray={lastBooksReadFriends} />
-        <SectionRow
-          title="Friends will lend"
-          bookArray={lastBooksFriendsLend}
-        />
-        <SectionRow title="I read lately" bookArray={lastBooksIRead} />
-      </div>
+      <SectionRow title="New from friends" bookArray={lastBooksReadFriends} />
+      <SectionRow title="Friends will lend" bookArray={lastBooksFriendsLend} />
+      <SectionRow title="I read lately" bookArray={lastBooksIRead} />
     </PrivateTemplate>
   );
 };
