@@ -6,7 +6,7 @@ import PrivateTemplate from '../../templates/Private/PrivateTemplate';
 import Form from './Form';
 import BookGrid from './BookGrid';
 
-import getGoogleBooks from '../../../services/googleBooks';
+import { getGoogleBooks } from '../../../services/googleBooks';
 
 const Search = () => {
   const [searchValues, setSearchValues] = useState({

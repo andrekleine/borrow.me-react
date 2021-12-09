@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const BookGrid = ({ foundBookObjs }) => {
   return (
@@ -7,14 +8,17 @@ const BookGrid = ({ foundBookObjs }) => {
         const imgLinks = bookObj.volumeInfo.imageLinks;
         const bookTitle = bookObj.volumeInfo.title;
         const bookId = bookObj.id;
+
         return (
           imgLinks && imgLinks.thumbnail && (
-            <img
-              src={imgLinks.thumbnail}
-              alt={bookTitle}
-              key={bookId}
-              className="search-book-cover"
-            />
+            <Link to={`/search/${bookId}`}>
+              <img
+                src={imgLinks.thumbnail}
+                alt={bookTitle}
+                key={bookId}
+                className="search-book-cover"
+              />
+            </Link>
           )
         );
       })}
