@@ -2,7 +2,7 @@ import React from 'react';
 
 const BookGrid = ({ foundBookObjs }) => {
   return (
-    <div className="book-container-height">
+    <div className="search-book-grid">
       {foundBookObjs.map((bookObj) => {
         const imgLinks = bookObj.volumeInfo.imageLinks;
         const bookTitle = bookObj.volumeInfo.title;
@@ -13,7 +13,7 @@ const BookGrid = ({ foundBookObjs }) => {
               src={imgLinks.thumbnail}
               alt={bookTitle}
               key={bookId}
-              className="book-cover"
+              className="search-book-cover"
             />
           )
         );

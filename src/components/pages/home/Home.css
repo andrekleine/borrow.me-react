@@ -5,8 +5,8 @@
     margin: 20px 10px 8px;
 }
 
-.section-row {
-    margin-top: 15px;
+.home-content {
+    margin-top: 9vh;    
 }
 
 .book-container-width {
@@ -16,13 +16,12 @@
 }
 
 .book-container-height {
-    height: 20vh;        
+    height: 20vh;
     object-fit: fill;
 }
 
 .book-cover {
-    max-height: 20vh;
-    width: 15vh;
-    object-fit: cover;    
-    border-radius: 5px;    
+    max-height: 20vh;    
+    border-radius: 5px;
+    margin: 2px;
 }
