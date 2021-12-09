@@ -42,7 +42,7 @@ const Search = () => {
     <PrivateTemplate>
       <div className="container search-container">
         <h1 className="search-title">
-          Find books by title and/or author name:
+          Find books by title and/or by author name:
         </h1>
         <Form
           handleSubmit={handleSubmit}

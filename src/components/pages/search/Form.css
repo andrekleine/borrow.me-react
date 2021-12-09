@@ -1,7 +1,25 @@
+.search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .search-form-field {
     border: 1px solid #ced4da;
     border-radius: 5px;
     height: 4vh;
-    width: 50vw;
+    width: 60vw;
     padding-left: 10px;
+    margin-top: 10px;
+}
+
+.search-button {
+    margin-top: 10px;    
+    margin-bottom: 20px;    
+    width: 30vw;
+    height: 4.5vh;
+    background: #F2A341;
+    border-radius: 5px;
+    color: #730217;
+    border: none;
 }

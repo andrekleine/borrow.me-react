@@ -20,8 +20,8 @@ const Form = ({ handleSubmit, handleChange, searchValues }) => {
         value={searchValues.author}
         className="search-form-field"
       />
-      <button type="submit" className="btn btn-primary">
-        Submit
+      <button type="submit" className="search-button">
+        Search
       </button>
     </form>
   );

@@ -2,24 +2,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 9vh;
-    margin-bottom: 53vh;
+    margin-top: 9vh;    
 }
 
 .search-title {    
-    width: 80%;    
+    width: 65%;    
     text-align: center;
     color: #730217;
     font-size: 2.4vh;
     font-family: "Roboto";    
 }
 
-.book-container-height {
+.search-book-container-height {
     height: 20vh;
-    object-fit: fill;
+    object-fit: fill;    
 }
 
-.book-cover {
+.search-book-cover {
     max-height: 20vh;
     width: 28.5vw;
     object-fit: cover;

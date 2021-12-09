@@ -8,14 +8,12 @@ const BookSwiper = ({ bookArray }) => {
       {bookArray.map((bookObj) => {
         return (
           <SwiperSlide key={bookObj._id}>
-            <div className="book-container-width">
-              <div className="book-container-height">
-                <img
-                  className="img-fluid book-cover"
-                  src={bookObj.imgLink}
-                  alt={bookObj.title}
-                />
-              </div>
+            <div className="book-container-height">
+              <img
+                className="img-fluid book-cover"
+                src={bookObj.imgLink}
+                alt={bookObj.title}
+              />
             </div>
           </SwiperSlide>
         );
