@@ -8,9 +8,7 @@ import ProtectedRoute from './components/misc/ProtectedRoute';
 
 import Home from './components/pages/home/Home';
 import Search from './components/pages/search/Search';
-
-// import MyProjects from './components/pages/MyProjects/MyProjects';
-// import ProjectDetails from './components/pages/ProjectDetails/ProjectDetails';
+import Detail from './components/pages/detail/Detail';
 
 const appRoutes = () => {
   const verifyLoggedUser = () => {
@@ -37,6 +35,10 @@ const appRoutes = () => {
       <Route
         path="/search"
         element={<ProtectedRoute isLogged={isUserLogged} Page={Search} />}
+      />
+      <Route
+        path="/search/:bookId"
+        element={<ProtectedRoute isLogged={isUserLogged} Page={Detail} />}
       />
     </Routes>
   );

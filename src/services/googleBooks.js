@@ -4,11 +4,15 @@ const googleBooks = axios.create({
   baseURL: 'https://www.googleapis.com/books/v1/volumes?q=',
 });
 
-const getGoogleBooks = async (title, author) => {
+export const getGoogleBooks = async (title, author) => {
   const intitle = title ? `intitle:${title}+` : '';
   const inauthor = author ? `inauthor:${author}` : '';
-  const response = await googleBooks.get(intitle + inauthor);
+  const maxResults = '&maxResults=40';
+  const response = await googleBooks.get(intitle + inauthor + maxResults);
   return response.data.items;
 };
 
-export default getGoogleBooks;
+export const getOneGoogleBook = async (bookId) => {
+  const response = await googleBooks.get(bookId);
+  return response.data.items[0];
+};
