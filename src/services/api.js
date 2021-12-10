@@ -42,8 +42,8 @@ export const home = async (token) => {
   return response.data;
 };
 
-export const getOneProject = async (projectId, token) => {
-  const response = await api.get(`/projects/${projectId}`, setHeaders(token));
+export const getOneBook = async (bookId, token) => {
+  const response = await api.get(`/books/${bookId}`, setHeaders(token));
 
   return response.data;
 };

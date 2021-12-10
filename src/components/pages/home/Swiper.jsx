@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
+
 import 'swiper/swiper.min.css';
 
 const BookSwiper = ({ bookArray }) => {
@@ -9,11 +11,13 @@ const BookSwiper = ({ bookArray }) => {
         return (
           <SwiperSlide key={bookObj._id}>
             <div className="book-container-height">
-              <img
-                className="img-fluid book-cover"
-                src={bookObj.imgLink}
-                alt={bookObj.title}
-              />
+              <Link to={`/books/${bookObj._id}`}>
+                <img
+                  className="img-fluid book-cover"
+                  src={bookObj.imgLink}
+                  alt={bookObj.title}
+                />
+              </Link>
             </div>
           </SwiperSlide>
         );

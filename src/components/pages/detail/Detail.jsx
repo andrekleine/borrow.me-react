@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { getOneGoogleBook } from '../../../services/googleBooks';
-
-import './SearchDetail.css';
+import './Detail.css';
 
 import PrivateTemplate from '../../templates/Private/PrivateTemplate';
+import { getOneBook } from '../../../services/api';
 
-const SearchDetail = () => {
+const Detail = () => {
   const [bookObj, setBookObj] = useState({});
   const { bookId } = useParams();
+  const token = localStorage.getItem('token');
 
   useEffect(() => {
-    getOneGoogleBook(bookId)
+    getOneBook(bookId, token)
       .then((response) => {
         setBookObj(response);
       })
@@ -25,16 +25,16 @@ const SearchDetail = () => {
 
   return (
     <PrivateTemplate>
-      {bookObj.lenght ? (
+      <div className="container-fluid detail-container">
         <img
-          src={bookObj.volumeInfo.imageLinks.thumbnail}
-          alt={bookObj.volumeInfo.title}
-          key={bookObj.id}
+          src={bookObj.imgLink}
+          alt={bookObj.title}
+          key={bookId._id}
           className="search-book-cover"
         />
-      ) : <p />}
+      </div>
     </PrivateTemplate>
   );
 };
 
-export default SearchDetail;
+export default Detail;

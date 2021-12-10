@@ -9,6 +9,7 @@ import ProtectedRoute from './components/misc/ProtectedRoute';
 import Home from './components/pages/home/Home';
 import Search from './components/pages/search/Search';
 import Detail from './components/pages/detail/Detail';
+import GoogleDetail from './components/pages/search/googleDetail/GoogleDetail';
 
 const appRoutes = () => {
   const verifyLoggedUser = () => {
@@ -33,12 +34,16 @@ const appRoutes = () => {
         element={<ProtectedRoute isLogged={isUserLogged} Page={Home} />}
       />
       <Route
+        path="/books/:bookId"
+        element={<ProtectedRoute isLogged={isUserLogged} Page={Detail} />}
+      />
+      <Route
         path="/search"
         element={<ProtectedRoute isLogged={isUserLogged} Page={Search} />}
       />
       <Route
         path="/search/:bookId"
-        element={<ProtectedRoute isLogged={isUserLogged} Page={Detail} />}
+        element={<ProtectedRoute isLogged={isUserLogged} Page={GoogleDetail} />}
       />
     </Routes>
   );
