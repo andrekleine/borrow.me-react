@@ -3,8 +3,6 @@ import { useParams } from 'react-router-dom';
 
 import { getOneGoogleBook } from '../../../../services/googleBooks';
 
-import './GoogleDetail.css';
-
 import PrivateTemplate from '../../../templates/Private/PrivateTemplate';
 
 const GoogleDetail = () => {
@@ -16,13 +14,10 @@ const GoogleDetail = () => {
       const response = await getOneGoogleBook(bookId);
       const { volumeInfo, id } = response;
       setBookObj({ ...volumeInfo, id });
-      console.log(bookObj);
     } catch (error) {
       throw new Error({ message: error });
     }
   }, []);
-
-  console.log(bookObj);
 
   return bookObj.id ? (
     <PrivateTemplate>
@@ -32,6 +27,7 @@ const GoogleDetail = () => {
         key={bookObj.id}
         className="search-book-cover"
       />
+      <h1>{bookObj.title}</h1>
     </PrivateTemplate>
   ) : (
     <p />

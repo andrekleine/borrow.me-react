@@ -35,15 +35,30 @@ export const register = async (formData) => {
   return response.data;
 };
 
-//
+// Home
 export const home = async (token) => {
   const response = await api.get('/books', setHeaders(token));
 
   return response.data;
 };
 
+// Search one book in collection Books
 export const getOneBook = async (bookId, token) => {
   const response = await api.get(`/books/${bookId}`, setHeaders(token));
+
+  return response.data;
+};
+
+// Add one book to users' collection
+export const addOneBook = async (googleID, token) => {
+  const response = await api.post(`/books/${googleID}`, setHeaders(token));
+
+  return response.data;
+};
+
+// Delete one book from user's collection
+export const deleteOneBook = async (bookId, token) => {
+  const response = await api.delete(`/books/${bookId}`, setHeaders(token));
 
   return response.data;
 };

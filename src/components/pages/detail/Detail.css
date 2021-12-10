@@ -1,6 +1,35 @@
 .detail-container {
-    /* margin-top: 10vh; */
+    margin-top: 10.5vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.detail-book-cover {
+    width: 65vw;
+}
+
+.detail-title,
+.detail-author {
+    width: 90%;
+    font-family: "Droid Sans";
+    text-align: center;
+}
+
+.detail-title {
+    font-weight: bolder;
+    margin-top: 3vh;
+    font-size: 3.5vh;
+}
+
+.detail-author {
+    margin-top: .5vh;
+    font-size: 2.5vh;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin-top: 1vh;
 }

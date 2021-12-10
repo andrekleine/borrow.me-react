@@ -13,3 +13,8 @@
     font-family: "Roboto";
     src: url("../src/components/misc/fonts/Roboto/Roboto-Regular.ttf");
 }
+
+@font-face {
+    font-family: "Droid Sans";
+    src: url("../src/components/misc/fonts/droid-sans/DroidSans.ttf");
+}
