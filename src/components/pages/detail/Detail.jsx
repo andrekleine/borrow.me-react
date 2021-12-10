@@ -39,7 +39,7 @@ const Detail = () => {
           return <h3 className="detail-author">{author}</h3>;
         })}
 
-        <Icons googleID={bookObj.googleID} />
+        <Icons bookObj={bookObj} />
       </div>
     </PrivateTemplate>
   ) : (

@@ -50,8 +50,12 @@ export const getOneBook = async (bookId, token) => {
 };
 
 // Add one book to users' collection
-export const addOneBook = async (googleID, token) => {
-  const response = await api.post(`/books/${googleID}`, setHeaders(token));
+export const addOneBook = async (body, token, googleID) => {
+  const response = await api.post(
+    `/books/${googleID}`,
+    body,
+    setHeaders(token)
+  );
 
   return response.data;
 };
@@ -73,7 +77,7 @@ export const createOneTask = async (projectId, body, token) => {
   const response = await api.post(
     `/tasks/${projectId}`,
     body,
-    setHeaders(token),
+    setHeaders(token)
   );
 
   return response.data;
