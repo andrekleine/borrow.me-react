@@ -8,10 +8,11 @@ const BookSwiper = ({ bookArray }) => {
   return (
     <Swiper spaceBetween={15} slidesPerView={2.9}>
       {bookArray.map((bookObj) => {
+        console.log(bookObj);
         return (
-          <SwiperSlide key={bookObj._id}>
+          <SwiperSlide key={bookObj.googleID}>
             <div className="book-container-height">
-              <Link to={`/books/${bookObj._id}`}>
+              <Link to={`/books/${bookObj.googleID}`}>
                 <img
                   className="img-fluid book-cover"
                   src={bookObj.imgLink}

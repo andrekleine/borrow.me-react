@@ -43,8 +43,8 @@ export const home = async (token) => {
 };
 
 // Search one book in collection Books
-export const getOneBook = async (bookId, token) => {
-  const response = await api.get(`/books/${bookId}`, setHeaders(token));
+export const getOneBook = async (googleId, token) => {
+  const response = await api.get(`/books/${googleId}`, setHeaders(token));
 
   return response.data;
 };
@@ -54,7 +54,7 @@ export const addOneBook = async (body, token, googleID) => {
   const response = await api.post(
     `/books/${googleID}`,
     body,
-    setHeaders(token)
+    setHeaders(token),
   );
 
   return response.data;
