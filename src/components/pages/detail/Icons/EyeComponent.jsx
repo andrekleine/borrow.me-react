@@ -15,18 +15,25 @@ const EyeComponent = ({ bookObj }) => {
   const { googleId } = useParams();
 
   const [read, setRead] = useState({});
+  const [savedBook, setSavedBook] = useState({});
 
-  const checkBookInCollection = useEffect(async () => {
+  useEffect(async () => {
     try {
       const response = await getOneBook(googleId, token);
-      setRead({ ...response });
+      if (response === null) {
+        setRead(false);
+      } else {
+        setRead(true);
+        setSavedBook({ ...response });
+      }
     } catch (error) {
       throw new Error({ message: error });
     }
   }, []);
 
-  console.log(bookObj);
-  const { title, authors, description, imageLinks, id } = bookObj;
+  const {
+    title, authors, description, imageLinks, id,
+  } = bookObj;
 
   const reqBody = {
     title,
@@ -38,19 +45,16 @@ const EyeComponent = ({ bookObj }) => {
 
   const eyeOnClick = async () => {
     if (read) {
-      await deleteOneBook(read._id, token);
-      checkBookInCollection();
+      await deleteOneBook(savedBook._id, token);
+      setRead(false);
     } else {
-      console.log(reqBody);
-      await addOneBook(reqBody, token, googleId);
+      const response = await addOneBook(reqBody, token, googleId);
+      setSavedBook({ ...response });
+      setRead(true);
     }
   };
 
-  return read._id ? (
-    <EyeFill onClick={eyeOnClick} />
-  ) : (
-    <Eye onClick={eyeOnClick} />
-  );
+  return read ? <EyeFill onClick={eyeOnClick} /> : <Eye onClick={eyeOnClick} />;
 };
 
 export default EyeComponent;

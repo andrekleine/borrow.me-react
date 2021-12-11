@@ -8,7 +8,6 @@ const BookSwiper = ({ bookArray }) => {
   return (
     <Swiper spaceBetween={15} slidesPerView={2.9}>
       {bookArray.map((bookObj) => {
-        console.log(bookObj);
         return (
           <SwiperSlide key={bookObj.googleID}>
             <div className="book-container-height">
