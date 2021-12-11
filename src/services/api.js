@@ -43,15 +43,19 @@ export const home = async (token) => {
 };
 
 // Search one book in collection Books
-export const getOneBook = async (bookId, token) => {
-  const response = await api.get(`/books/${bookId}`, setHeaders(token));
+export const getOneBook = async (googleId, token) => {
+  const response = await api.get(`/books/${googleId}`, setHeaders(token));
 
   return response.data;
 };
 
 // Add one book to users' collection
-export const addOneBook = async (googleID, token) => {
-  const response = await api.post(`/books/${googleID}`, setHeaders(token));
+export const addOneBook = async (body, token, googleID) => {
+  const response = await api.post(
+    `/books/${googleID}`,
+    body,
+    setHeaders(token),
+  );
 
   return response.data;
 };
@@ -73,7 +77,7 @@ export const createOneTask = async (projectId, body, token) => {
   const response = await api.post(
     `/tasks/${projectId}`,
     body,
-    setHeaders(token),
+    setHeaders(token)
   );
 
   return response.data;

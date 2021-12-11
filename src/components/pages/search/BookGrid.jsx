@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const BookGrid = ({ foundBookObjs }) => {
   return (
-    <div className="search-book-grid">
+    <div className="search-book-grid" key="1">
       {foundBookObjs.map((bookObj) => {
         const imgLinks = bookObj.volumeInfo.imageLinks;
         const bookTitle = bookObj.volumeInfo.title;

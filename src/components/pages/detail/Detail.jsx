@@ -6,40 +6,37 @@ import './Detail.css';
 import PrivateTemplate from '../../templates/Private/PrivateTemplate';
 import Icons from './Icons/Icons';
 
-import { getOneBook } from '../../../services/api';
+import { getOneGoogleBook } from '../../../services/googleBooks';
 
 const Detail = () => {
   const [bookObj, setBookObj] = useState({});
-
-  const { bookId } = useParams();
-  const token = localStorage.getItem('token');
+  const { googleId } = useParams();
 
   useEffect(async () => {
     try {
-      const response = await getOneBook(bookId, token);
-      setBookObj({ ...response });
+      const response = await getOneGoogleBook(googleId);
+      const { volumeInfo, id } = response;
+      setBookObj({ ...volumeInfo, id });
     } catch (error) {
       throw new Error({ message: error });
     }
   }, []);
 
-  console.log(bookObj);
-
-  return bookObj._id ? (
+  return bookObj.id ? (
     <PrivateTemplate>
       <div className="container-fluid detail-container">
         <img
-          src={bookObj.imgLink}
+          src={bookObj.imageLinks.thumbnail}
           alt={bookObj.title}
-          key={bookObj._id}
+          key={bookObj.id}
           className="detail-book-cover"
         />
         <h1 className="detail-title">{bookObj.title}</h1>
         {bookObj.authors.map((author) => {
-          return <h3 className="detail-author">{author}</h3>;
+          return <h3 className="detail-author" key={author}>{author}</h3>;
         })}
 
-        <Icons googleID={bookObj.googleID} />
+        <Icons bookObj={bookObj} />
       </div>
     </PrivateTemplate>
   ) : (
