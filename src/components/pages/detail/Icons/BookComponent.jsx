@@ -4,13 +4,9 @@ import { useParams } from 'react-router-dom';
 import { ReactComponent as BookFill } from '../../../misc/images/book-fill.svg';
 import { ReactComponent as Book } from '../../../misc/images/book.svg';
 
-import {
-  getOneBook,
-  deleteOneBook,
-  addOneBook,
-} from '../../../../services/api';
+import { getOneBook, changeOneBook } from '../../../../services/api';
 
-const BookComponent = ({ bookObj }) => {
+const BookComponent = () => {
   const token = localStorage.getItem('token');
   const { googleId } = useParams();
 
@@ -22,28 +18,28 @@ const BookComponent = ({ bookObj }) => {
       const response = await getOneBook(googleId, token);
       if (response !== null) {
         setSavedBook({ ...response });
-        if (savedBook.lendable) {
-          setlendable(true);
-        } else {
-          setlendable(false);
-        }
+      }
+      if (savedBook.lendable === true) {
+        setlendable(true);
+      } else {
+        setlendable(false);
       }
     } catch (error) {
       throw new Error({ message: error });
     }
-  }, []);
+  }, [lendable]);
 
-  const { title, authors, description, imageLinks, id } = bookObj;
-
-  const reqBody = {
-    title,
-    authors,
-    description,
-    imgLink: imageLinks.thumbnail,
-    googleID: id,
+  const bookOnClick = async () => {
+    if (lendable) {
+      const reqBody = { lendable: false };
+      await changeOneBook(reqBody, token, savedBook._id);
+      setlendable(false);
+    } else {
+      const reqBody = { lendable: true };
+      await changeOneBook(reqBody, token, savedBook._id);
+      setlendable(true);
+    }
   };
-
-  const bookOnClick = async () => {};
 
   return lendable ? (
     <BookFill onClick={bookOnClick} />

@@ -10,7 +10,7 @@ const Icons = ({ bookObj }) => {
     <div className="icons">
       <EyeComponent bookObj={bookObj} />
       <StarFill />
-      <BookComponent bookObj={bookObj} />
+      <BookComponent />
     </div>
   );
 };

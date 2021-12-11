@@ -60,6 +60,17 @@ export const addOneBook = async (body, token, googleID) => {
   return response.data;
 };
 
+// Change one book's lendable status
+export const changeOneBook = async (body, token, bookId) => {
+  const response = await api.put(
+    `/books/${bookId}`,
+    body,
+    setHeaders(token),
+  );
+
+  return response.data;
+};
+
 // Delete one book from user's collection
 export const deleteOneBook = async (bookId, token) => {
   const response = await api.delete(`/books/${bookId}`, setHeaders(token));
