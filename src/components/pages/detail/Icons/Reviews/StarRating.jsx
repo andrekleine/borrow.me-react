@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { Rating } from 'react-simple-star-rating';
 
-const StarRating = ({ setStars }) => {
-  const [rating, setRating] = useState(0); // initial rating value
+const StarRating = ({ setReview, review }) => {
+  const [rating, setRating] = useState(0);
 
   const handleRating = (rate) => {
-    setStars(rate);
-    console.log('RATE --->', rate);
-    console.log('RATING --->', rating);
+    const chosenStars = rate / 20;
+    setReview({ ...review, stars: chosenStars });
+    console.log(chosenStars);
   };
 
   return (
-    <div className="App">
+    <div className="star-rating">
       <Rating
         onClick={handleRating}
         ratingValue={rating}

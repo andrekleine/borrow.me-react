@@ -54,7 +54,7 @@ export const addOneBook = async (body, token, googleID) => {
   const response = await api.post(
     `/books/${googleID}`,
     body,
-    setHeaders(token)
+    setHeaders(token),
   );
 
   return response.data;
@@ -84,9 +84,9 @@ export const getOneReview = async (googleId, token) => {
 // Add one review
 export const addOneReview = async (body, token, googleID) => {
   const response = await api.post(
-    `/books/${googleID}`,
+    `/reviews/${googleID}`,
     body,
-    setHeaders(token)
+    setHeaders(token),
   );
 
   return response.data;

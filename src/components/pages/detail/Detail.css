@@ -37,6 +37,28 @@
     margin-top: 1vh;
 }
 
+.add-review-modal-top,
+.add-review-modal-bottom {
+    display: flex;
+    justify-content: right;
+}
+
 .review-modal-title {
-    font-size: 7vw;
+    font-size: 6vw;
+}
+
+.add-review-modal-middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comment-box {
+    width: 90%;
+}
+
+.comment-box,
+.star-rating,
+.add-review-modal-bottom {
+    margin-top: 2vh;
 }

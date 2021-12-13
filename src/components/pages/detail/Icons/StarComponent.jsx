@@ -4,9 +4,9 @@ import { useParams } from 'react-router-dom';
 import { ReactComponent as StarFill } from '../../../misc/images/star-fill.svg';
 import { ReactComponent as Star } from '../../../misc/images/star.svg';
 
-import { getOneReview, changeOneReview } from '../../../../services/api';
+import { getOneReview } from '../../../../services/api';
 
-import ReviewsModal from './Reviews/ReviewsModal';
+import AddReviewModal from './Reviews/AddReviewModal';
 
 const StarComponent = () => {
   const token = localStorage.getItem('token');
@@ -14,7 +14,8 @@ const StarComponent = () => {
 
   const [myReview, setMyReview] = useState([]);
   const [allReviews, setAllReviews] = useState([]);
-  const [showModal, setShowModal] = useState(false);
+  const [showAddModal, setShowAddModal] = useState(false);
+  const [showChangeModal, setShowChangeModal] = useState(false);
 
   useEffect(async () => {
     try {
@@ -29,19 +30,18 @@ const StarComponent = () => {
   }, []);
 
   const reviewOnClick = async () => {
-    setShowModal(!showModal);
+    setShowAddModal(!showAddModal);
   };
-
-  const addReview = async () => {};
 
   return allReviews ? (
     <div>
-      <Star onClick={reviewOnClick} />
-      <ReviewsModal
-        showModal={showModal}
-        reviewOnClick={reviewOnClick}
-        addReview={addReview}
-      />
+      {myReview ? (
+        <StarFill onClick={reviewOnClick} />
+      ) : (
+        <Star onClick={reviewOnClick} myReview={myReview} />
+      )}
+
+      <AddReviewModal showAddModal={showAddModal} reviewOnClick={reviewOnClick} />
     </div>
   ) : (
     <p />
