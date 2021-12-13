@@ -62,11 +62,7 @@ export const addOneBook = async (body, token, googleID) => {
 
 // Change one book's lendable status
 export const changeOneBook = async (body, token, bookId) => {
-  const response = await api.put(
-    `/books/${bookId}`,
-    body,
-    setHeaders(token),
-  );
+  const response = await api.put(`/books/${bookId}`, body, setHeaders(token));
 
   return response.data;
 };
@@ -74,6 +70,31 @@ export const changeOneBook = async (body, token, bookId) => {
 // Delete one book from user's collection
 export const deleteOneBook = async (bookId, token) => {
   const response = await api.delete(`/books/${bookId}`, setHeaders(token));
+
+  return response.data;
+};
+
+// Search user's review for one particular book
+export const getOneReview = async (googleId, token) => {
+  const response = await api.get(`/reviews/${googleId}`, setHeaders(token));
+
+  return response.data;
+};
+
+// Add one review
+export const addOneReview = async (body, token, googleID) => {
+  const response = await api.post(
+    `/reviews/${googleID}`,
+    body,
+    setHeaders(token),
+  );
+
+  return response.data;
+};
+
+// Delete one review
+export const deleteOneReview = async (reviewId, token) => {
+  const response = await api.delete(`/reviews/${reviewId}`, setHeaders(token));
 
   return response.data;
 };

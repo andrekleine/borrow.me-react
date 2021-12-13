@@ -30,14 +30,16 @@ const BookComponent = () => {
   }, [lendable]);
 
   const bookOnClick = async () => {
-    if (lendable) {
-      const reqBody = { lendable: false };
-      await changeOneBook(reqBody, token, savedBook._id);
-      setlendable(false);
-    } else {
-      const reqBody = { lendable: true };
-      await changeOneBook(reqBody, token, savedBook._id);
-      setlendable(true);
+    if (savedBook) {
+      if (lendable) {
+        const reqBody = { lendable: false };
+        await changeOneBook(reqBody, token, savedBook._id);
+        setlendable(false);
+      } else {
+        const reqBody = { lendable: true };
+        await changeOneBook(reqBody, token, savedBook._id);
+        setlendable(true);
+      }
     }
   };
 
