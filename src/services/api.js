@@ -92,9 +92,9 @@ export const addOneReview = async (body, token, googleID) => {
   return response.data;
 };
 
-// Change one review
-export const changeOneReview = async (body, token, bookId) => {
-  const response = await api.put(`/books/${bookId}`, body, setHeaders(token));
+// Delete one review
+export const deleteOneReview = async (reviewId, token) => {
+  const response = await api.delete(`/reviews/${reviewId}`, setHeaders(token));
 
   return response.data;
 };

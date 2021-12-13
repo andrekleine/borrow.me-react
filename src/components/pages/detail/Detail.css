@@ -62,3 +62,12 @@
 .add-review-modal-bottom {
     margin-top: 2vh;
 }
+
+.delete-modal-title {
+    font-size: 5.5vw;
+}
+
+.del-review-modal-middle {
+    display: flex;
+    justify-content: space-evenly;
+}

@@ -10,7 +10,7 @@ import { addOneReview } from '../../../../../services/api';
 import StarRating from './StarRating';
 import Comments from './Comments';
 
-const AddReviewModal = ({ showAddModal, reviewOnClick }) => {
+const AddReviewModal = ({ showAddModal, reviewOnClick, setShowAddModal }) => {
   const token = localStorage.getItem('token');
   const { googleId } = useParams();
 
@@ -19,6 +19,7 @@ const AddReviewModal = ({ showAddModal, reviewOnClick }) => {
   const handleSubmit = async () => {
     if (review) {
       await addOneReview(review, token, googleId);
+      setShowAddModal(!showAddModal);
     }
   };
 

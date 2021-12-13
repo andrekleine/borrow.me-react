@@ -7,6 +7,7 @@ import { ReactComponent as Star } from '../../../misc/images/star.svg';
 import { getOneReview } from '../../../../services/api';
 
 import AddReviewModal from './Reviews/AddReviewModal';
+import DeleteReviewModal from './Reviews/DeleteModal';
 
 const StarComponent = () => {
   const token = localStorage.getItem('token');
@@ -15,13 +16,13 @@ const StarComponent = () => {
   const [myReview, setMyReview] = useState([]);
   const [allReviews, setAllReviews] = useState([]);
   const [showAddModal, setShowAddModal] = useState(false);
-  const [showChangeModal, setShowChangeModal] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   useEffect(async () => {
     try {
       const response = await getOneReview(googleId, token);
       if (response !== null) {
-        setMyReview({ ...response[1] });
+        setMyReview({ ...response[1][0] });
         setAllReviews({ ...response[0] });
       }
     } catch (error) {
@@ -30,18 +31,34 @@ const StarComponent = () => {
   }, []);
 
   const reviewOnClick = async () => {
-    setShowAddModal(!showAddModal);
+    if (myReview.length) {
+      setShowDeleteModal(!showDeleteModal);
+    } else {
+      setShowAddModal(!showAddModal);
+    }
   };
+
+  console.log(myReview);
 
   return allReviews ? (
     <div>
-      {myReview ? (
+      {myReview.length ? (
         <StarFill onClick={reviewOnClick} />
       ) : (
-        <Star onClick={reviewOnClick} myReview={myReview} />
+        <Star onClick={reviewOnClick} />
       )}
 
-      <AddReviewModal showAddModal={showAddModal} reviewOnClick={reviewOnClick} />
+      <AddReviewModal
+        setShowAddModal={setShowAddModal}
+        showAddModal={showAddModal}
+        reviewOnClick={reviewOnClick}
+      />
+      <DeleteReviewModal
+        showDeleteModal={showDeleteModal}
+        reviewOnClick={reviewOnClick}
+        myReview={myReview}
+        setShowDeleteModal={setShowDeleteModal}
+      />
     </div>
   ) : (
     <p />
