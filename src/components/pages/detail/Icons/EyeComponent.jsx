@@ -29,7 +29,7 @@ const EyeComponent = ({ bookObj }) => {
     } catch (error) {
       throw new Error({ message: error });
     }
-  }, []);
+  }, [read]);
 
   const {
     title, authors, description, imageLinks, id,
