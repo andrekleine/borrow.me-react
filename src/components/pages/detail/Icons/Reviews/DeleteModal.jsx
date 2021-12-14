@@ -15,16 +15,16 @@ const DeleteReviewModal = ({
   const token = localStorage.getItem('token');
 
   const handleSubmit = async () => {
-    const response = await deleteOneReview(myReview._id, token);
+    if (myReview) await deleteOneReview(myReview._id, token);
     setShowDeleteModal(!showDeleteModal);
   };
 
   return myReview ? (
-    <Modal show={showDeleteModal} onHide={reviewOnClick}>
+    <Modal show={showDeleteModal} onHide={reviewOnClick} className="modal">
       <Modal.Body>
         <div className="del-review-modal-top">
           <h1 className="delete-modal-title">
-            Do you wish to delete this review?
+            Do you wish to delete your review?
           </h1>
         </div>
         <div className="del-review-modal-middle">

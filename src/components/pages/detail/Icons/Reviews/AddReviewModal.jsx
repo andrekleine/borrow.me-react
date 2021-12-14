@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Modal } from 'react-bootstrap';
 
-import { ReactComponent as PlusCircleFill } from '../../../../misc/images/plus-circle-fill.svg';
+import { ReactComponent as CheckCircleFill } from '../../../../misc/images/check-circle-fill.svg';
 import { ReactComponent as XCircleFill } from '../../../../misc/images/x-circle-fill.svg';
 
 import { addOneReview } from '../../../../../services/api';
@@ -24,18 +24,19 @@ const AddReviewModal = ({ showAddModal, reviewOnClick, setShowAddModal }) => {
   };
 
   return (
-    <Modal show={showAddModal} onHide={reviewOnClick}>
+    <Modal show={showAddModal} onHide={reviewOnClick} className="modal">
       <Modal.Body>
         <div className="add-review-modal-top">
           <XCircleFill type="button" onClick={reviewOnClick} />
         </div>
         <div className="add-review-modal-middle">
-          <h1 className="review-modal-title">Add a review to this book!</h1>
+          <h1 className="review-modal-title">Add a review:</h1>
           <StarRating setReview={setReview} review={review} />
           <Comments setReview={setReview} review={review} />
         </div>
         <div className="add-review-modal-bottom">
-          <PlusCircleFill type="button" onClick={handleSubmit} />
+          <h1 className="review-modal-title-add">Add!</h1>
+          <CheckCircleFill type="button" onClick={handleSubmit} />
         </div>
       </Modal.Body>
     </Modal>

@@ -13,36 +13,30 @@ const StarComponent = () => {
   const token = localStorage.getItem('token');
   const { googleId } = useParams();
 
-  const [myReview, setMyReview] = useState([]);
-  const [allReviews, setAllReviews] = useState([]);
+  const [myReview, setMyReview] = useState({});
   const [showAddModal, setShowAddModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   useEffect(async () => {
     try {
       const response = await getOneReview(googleId, token);
-      if (response !== null) {
-        setMyReview({ ...response[1][0] });
-        setAllReviews({ ...response[0] });
-      }
+      setMyReview({ ...response[0] });
     } catch (error) {
       throw new Error({ message: error });
     }
-  }, []);
+  }, [showAddModal, showDeleteModal]);
 
   const reviewOnClick = async () => {
-    if (myReview.length) {
+    if (myReview._id) {
       setShowDeleteModal(!showDeleteModal);
     } else {
       setShowAddModal(!showAddModal);
     }
   };
 
-  console.log(myReview);
-
-  return allReviews ? (
+  return myReview ? (
     <div>
-      {myReview.length ? (
+      {myReview._id ? (
         <StarFill onClick={reviewOnClick} />
       ) : (
         <Star onClick={reviewOnClick} />

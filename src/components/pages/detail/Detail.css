@@ -37,14 +37,20 @@
     margin-top: 1vh;
 }
 
-.add-review-modal-top,
-.add-review-modal-bottom {
+.add-review-modal-top {
     display: flex;
     justify-content: right;
 }
 
-.review-modal-title {
+.add-review-modal-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.review-modal-title-add {
     font-size: 6vw;
+    margin-right: 3vw;
 }
 
 .add-review-modal-middle {
@@ -70,4 +76,8 @@
 .del-review-modal-middle {
     display: flex;
     justify-content: space-evenly;
+}
+
+.modal {
+    margin-top: 30vh;
 }
