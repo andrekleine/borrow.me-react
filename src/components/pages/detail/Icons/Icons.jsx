@@ -1,14 +1,14 @@
 import React from 'react';
 
-import EyeComponent from './EyeComponent';
-import BookComponent from './BookComponent';
-import StarComponent from './StarComponent';
+import EyeComponent from './IconComponents/EyeComponent';
+import BookComponent from './IconComponents/BookComponent';
+import StarComponent from './IconComponents/StarComponent';
 
-const Icons = ({ bookObj }) => {
+const Icons = ({ bookObj, setHasReview }) => {
   return (
     <div className="icons">
       <EyeComponent bookObj={bookObj} />
-      <StarComponent />
+      <StarComponent setHasReview={setHasReview} />
       <BookComponent />
     </div>
   );

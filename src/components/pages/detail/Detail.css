@@ -81,3 +81,24 @@
 .modal {
     margin-top: 30vh;
 }
+
+.my-review {
+    width: 70%;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.my-review-title {
+    color: #592202;
+}
+
+.my-review-text {
+    font-style: italic;
+}
+
+.react-simple-star-rating {
+    margin: 0;
+    padding: 0;
+}

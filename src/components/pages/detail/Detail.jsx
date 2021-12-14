@@ -5,12 +5,15 @@ import './Detail.css';
 
 import PrivateTemplate from '../../templates/Private/PrivateTemplate';
 import Icons from './Icons/Icons';
+import MyReview from './MyReview/MyReview';
 
 import { getOneGoogleBook } from '../../../services/googleBooks';
 
 const Detail = () => {
-  const [bookObj, setBookObj] = useState({});
   const { googleId } = useParams();
+
+  const [bookObj, setBookObj] = useState({});
+  const [hasReview, setHasReview] = useState();
 
   useEffect(async () => {
     try {
@@ -20,7 +23,7 @@ const Detail = () => {
     } catch (error) {
       throw new Error({ message: error });
     }
-  }, []);
+  }, [hasReview]);
 
   return bookObj.id ? (
     <PrivateTemplate>
@@ -33,10 +36,14 @@ const Detail = () => {
         />
         <h1 className="detail-title">{bookObj.title}</h1>
         {bookObj.authors.map((author) => {
-          return <h3 className="detail-author" key={author}>{author}</h3>;
+          return (
+            <h3 className="detail-author" key={author}>
+              {author}
+            </h3>
+          );
         })}
-
-        <Icons bookObj={bookObj} />
+        <Icons bookObj={bookObj} setHasReview={setHasReview} />
+        {hasReview && <MyReview />}
       </div>
     </PrivateTemplate>
   ) : (

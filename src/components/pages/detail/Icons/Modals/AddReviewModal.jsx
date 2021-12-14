@@ -7,10 +7,10 @@ import { ReactComponent as XCircleFill } from '../../../../misc/images/x-circle-
 
 import { addOneReview } from '../../../../../services/api';
 
-import StarRating from './StarRating';
-import Comments from './Comments';
+import StarRating from '../Reviews/StarRating';
+import Comments from '../Reviews/Comments';
 
-const AddReviewModal = ({ showAddModal, reviewOnClick, setShowAddModal }) => {
+const AddReviewModal = ({ showAddModal, reviewOnClick, setShowAddModal, setHasReview }) => {
   const token = localStorage.getItem('token');
   const { googleId } = useParams();
 
@@ -20,6 +20,7 @@ const AddReviewModal = ({ showAddModal, reviewOnClick, setShowAddModal }) => {
     if (review) {
       await addOneReview(review, token, googleId);
       setShowAddModal(!showAddModal);
+      setHasReview(true);
     }
   };
 

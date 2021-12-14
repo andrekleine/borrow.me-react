@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { ReactComponent as BookFill } from '../../../misc/images/book-fill.svg';
-import { ReactComponent as Book } from '../../../misc/images/book.svg';
+import { ReactComponent as BookFill } from '../../../../misc/images/book-fill.svg';
+import { ReactComponent as Book } from '../../../../misc/images/book.svg';
 
-import { getOneBook, changeOneBook } from '../../../../services/api';
+import { getOneBook, changeOneBook } from '../../../../../services/api';
 
 const BookComponent = () => {
   const token = localStorage.getItem('token');

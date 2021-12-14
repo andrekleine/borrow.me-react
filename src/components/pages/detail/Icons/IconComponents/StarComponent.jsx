@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { ReactComponent as StarFill } from '../../../misc/images/star-fill.svg';
-import { ReactComponent as Star } from '../../../misc/images/star.svg';
+import { ReactComponent as StarFill } from '../../../../misc/images/star-fill.svg';
+import { ReactComponent as Star } from '../../../../misc/images/star.svg';
 
-import { getOneReview } from '../../../../services/api';
+import { getOneReview } from '../../../../../services/api';
 
-import AddReviewModal from './Reviews/AddReviewModal';
-import DeleteReviewModal from './Reviews/DeleteModal';
+import AddReviewModal from '../Modals/AddReviewModal';
+import DeleteReviewModal from '../Modals/DeleteModal';
 
-const StarComponent = () => {
+const StarComponent = ({ setHasReview }) => {
   const token = localStorage.getItem('token');
   const { googleId } = useParams();
 
@@ -46,12 +46,14 @@ const StarComponent = () => {
         setShowAddModal={setShowAddModal}
         showAddModal={showAddModal}
         reviewOnClick={reviewOnClick}
+        setHasReview={setHasReview}
       />
       <DeleteReviewModal
         showDeleteModal={showDeleteModal}
         reviewOnClick={reviewOnClick}
         myReview={myReview}
         setShowDeleteModal={setShowDeleteModal}
+        setHasReview={setHasReview}
       />
     </div>
   ) : (

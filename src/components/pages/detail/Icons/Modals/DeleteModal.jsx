@@ -11,12 +11,14 @@ const DeleteReviewModal = ({
   reviewOnClick,
   myReview,
   setShowDeleteModal,
+  setHasReview,
 }) => {
   const token = localStorage.getItem('token');
 
   const handleSubmit = async () => {
     if (myReview) await deleteOneReview(myReview._id, token);
     setShowDeleteModal(!showDeleteModal);
+    setHasReview(false);
   };
 
   return myReview ? (

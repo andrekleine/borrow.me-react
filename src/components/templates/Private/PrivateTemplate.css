@@ -1,3 +1,7 @@
 .private-template-container {    
     background-color: white;
 }
+
+.private-template-content {
+    margin-bottom: 10vh;
+}

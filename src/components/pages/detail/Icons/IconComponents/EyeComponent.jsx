@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { ReactComponent as Eye } from '../../../misc/images/eye.svg';
-import { ReactComponent as EyeFill } from '../../../misc/images/eye-fill.svg';
+import { ReactComponent as Eye } from '../../../../misc/images/eye.svg';
+import { ReactComponent as EyeFill } from '../../../../misc/images/eye-fill.svg';
 
 import {
   getOneBook,
   deleteOneBook,
   addOneBook,
-} from '../../../../services/api';
+} from '../../../../../services/api';
 
 const EyeComponent = ({ bookObj }) => {
   const token = localStorage.getItem('token');
