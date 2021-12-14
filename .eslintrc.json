@@ -29,6 +29,6 @@
         "arrow-body-style": "off",
         "react/jsx-props-no-spreading": "off",
         "react/prop-types": "off",
-        "no-underscore-dangle": "off"        
+        "no-underscore-dangle": "off"
     }
 }

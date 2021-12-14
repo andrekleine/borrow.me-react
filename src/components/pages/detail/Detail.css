@@ -15,7 +15,6 @@
 
 .detail-title,
 .detail-author {
-    width: 90%;
     text-align: center;
 }
 
@@ -101,4 +100,10 @@
 .react-simple-star-rating {
     margin: 0;
     padding: 0;
+}
+
+.friends-who-lend {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

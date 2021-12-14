@@ -20,11 +20,11 @@ const EyeComponent = ({ bookObj }) => {
   useEffect(async () => {
     try {
       const response = await getOneBook(googleId, token);
-      if (response === null) {
+      if (response[0] === null) {
         setRead(false);
       } else {
         setRead(true);
-        setSavedBook({ ...response });
+        setSavedBook({ ...response[0] });
       }
     } catch (error) {
       throw new Error({ message: error });
@@ -54,7 +54,11 @@ const EyeComponent = ({ bookObj }) => {
     }
   };
 
-  return read ? <EyeFill onClick={eyeOnClick} /> : <Eye onClick={eyeOnClick} />;
+  return savedBook && read ? (
+    <EyeFill onClick={eyeOnClick} />
+  ) : (
+    <Eye onClick={eyeOnClick} />
+  );
 };
 
 export default EyeComponent;

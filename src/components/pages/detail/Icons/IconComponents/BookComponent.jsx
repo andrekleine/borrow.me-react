@@ -17,7 +17,7 @@ const BookComponent = () => {
     try {
       const response = await getOneBook(googleId, token);
       if (response !== null) {
-        setSavedBook({ ...response });
+        setSavedBook({ ...response[0] });
       }
       if (savedBook.lendable === true) {
         setlendable(true);
@@ -30,7 +30,7 @@ const BookComponent = () => {
   }, [lendable]);
 
   const bookOnClick = async () => {
-    if (savedBook) {
+    if (savedBook._id) {
       if (lendable) {
         const reqBody = { lendable: false };
         await changeOneBook(reqBody, token, savedBook._id);

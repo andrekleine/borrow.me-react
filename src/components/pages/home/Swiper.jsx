@@ -7,9 +7,10 @@ import 'swiper/swiper.min.css';
 const BookSwiper = ({ bookArray }) => {
   return (
     <Swiper spaceBetween={15} slidesPerView={2.9}>
-      {bookArray.map((bookObj) => {
+      {bookArray.map((bookObj, index) => {
+        const modifier = index;
         return (
-          <SwiperSlide key={bookObj.googleID}>
+          <SwiperSlide key={bookObj.googleID + modifier}>
             <div className="book-container-height">
               <Link to={`/books/${bookObj.googleID}`}>
                 <img

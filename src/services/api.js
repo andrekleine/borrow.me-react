@@ -98,3 +98,10 @@ export const deleteOneReview = async (reviewId, token) => {
 
   return response.data;
 };
+
+// Find user by ID
+export const findUserById = async (userId) => {
+  const response = await api.get(`/auth/${userId}`);
+
+  return response.data;
+};

@@ -4,8 +4,11 @@ import { useParams } from 'react-router-dom';
 import './Detail.css';
 
 import PrivateTemplate from '../../templates/Private/PrivateTemplate';
+import BookCover from './BookCover/BookCover';
+import Authors from './Authors/Authors';
 import Icons from './Icons/Icons';
 import MyReview from './MyReview/MyReview';
+import PeopleBorrow from './PeopleBorrow/PeopleBorrow';
 
 import { getOneGoogleBook } from '../../../services/googleBooks';
 
@@ -14,6 +17,7 @@ const Detail = () => {
 
   const [bookObj, setBookObj] = useState({});
   const [hasReview, setHasReview] = useState();
+  const [peopleBorrow, setPeopleBorrow] = useState();
 
   useEffect(async () => {
     try {
@@ -23,27 +27,17 @@ const Detail = () => {
     } catch (error) {
       throw new Error({ message: error });
     }
-  }, [hasReview]);
+  }, [hasReview, peopleBorrow]);
 
   return bookObj.id ? (
     <PrivateTemplate>
       <div className="container-fluid detail-container">
-        <img
-          src={bookObj.imageLinks.thumbnail}
-          alt={bookObj.title}
-          key={bookObj.id}
-          className="detail-book-cover"
-        />
+        <BookCover bookObj={bookObj} />
         <h1 className="detail-title">{bookObj.title}</h1>
-        {bookObj.authors.map((author) => {
-          return (
-            <h3 className="detail-author" key={author}>
-              {author}
-            </h3>
-          );
-        })}
+        <Authors bookObj={bookObj} />
         <Icons bookObj={bookObj} setHasReview={setHasReview} />
-        {hasReview && <MyReview />}
+        <MyReview />
+        <PeopleBorrow setPeopleBorrow={setPeopleBorrow} />
       </div>
     </PrivateTemplate>
   ) : (
