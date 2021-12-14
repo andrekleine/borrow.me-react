@@ -36,8 +36,8 @@ const Detail = () => {
         <h1 className="detail-title">{bookObj.title}</h1>
         <Authors bookObj={bookObj} />
         <Icons bookObj={bookObj} setHasReview={setHasReview} />
-        <MyReview />
         <PeopleBorrow setPeopleBorrow={setPeopleBorrow} />
+        <MyReview />
       </div>
     </PrivateTemplate>
   ) : (
