@@ -17,7 +17,9 @@ const AddBookModal = ({
   const { googleId } = useParams();
   const token = localStorage.getItem('token');
 
-  const { title, authors, description, imageLinks, id } = googleBook;
+  const {
+    title, authors, description, imageLinks, id,
+  } = googleBook;
 
   const reqBody = {
     title,
