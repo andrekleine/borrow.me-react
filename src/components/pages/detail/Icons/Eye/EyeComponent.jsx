@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 
 import { ReactComponent as Eye } from '../../../../misc/images/eye.svg';
 import { ReactComponent as EyeFill } from '../../../../misc/images/eye-fill.svg';
@@ -7,24 +6,9 @@ import { ReactComponent as EyeFill } from '../../../../misc/images/eye-fill.svg'
 import AddBookModal from './Modals/AddBookModal';
 import DeleteBookModal from './Modals/DeleteBookModal';
 
-import { getOneBook } from '../../../../../services/api';
-
-const EyeComponent = ({ googleBook }) => {
-  const { googleId } = useParams();
-  const token = localStorage.getItem('token');
-
-  const [myBook, setMyBook] = useState({});
+const EyeComponent = ({ googleBook, myBook, setMyBook }) => {
   const [showDeleteBookModal, setShowDeleteBookModal] = useState(false);
   const [showAddBookModal, setShowAddBookModal] = useState(false);
-
-  useEffect(async () => {
-    try {
-      const apiMyBookCall = await getOneBook(googleId, token);
-      setMyBook({ ...apiMyBookCall[0] });
-    } catch (error) {
-      throw new Error({ message: error });
-    }
-  }, []);
 
   useEffect(() => {}, [myBook]);
 
