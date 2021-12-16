@@ -27,9 +27,9 @@ const Detail = () => {
     } catch (error) {
       throw new Error({ message: error });
     }
-  }, [hasReview, peopleBorrow]);
+  }, [peopleBorrow, hasReview]);
 
-  return bookObj.id ? (
+  return bookObj.id && MyReview ? (
     <PrivateTemplate>
       <div className="container-fluid detail-container">
         <BookCover bookObj={bookObj} />
@@ -37,7 +37,7 @@ const Detail = () => {
         <Authors bookObj={bookObj} />
         <Icons bookObj={bookObj} setHasReview={setHasReview} />
         <PeopleBorrow setPeopleBorrow={setPeopleBorrow} />
-        <MyReview />
+        {hasReview && <MyReview />}
       </div>
     </PrivateTemplate>
   ) : (

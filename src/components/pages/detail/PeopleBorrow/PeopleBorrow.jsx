@@ -21,7 +21,7 @@ const PeopleBorrow = () => {
 
   return people[0] ? (
     <div className="friends-who-lend">
-      <h5 className="my-review-title">Friends who will lend this book:</h5>
+      <h5 className="my-review-title">Friends who lend this book:</h5>
       {people.map((person) => {
         return <User id={person} key={person._id} />;
       })}

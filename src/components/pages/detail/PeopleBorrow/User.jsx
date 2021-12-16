@@ -12,8 +12,8 @@ const User = ({ id }) => {
   }, []);
 
   return user.name ? (
-    <Mailto email={user.email} obfuscated>
-      <p>{user.name}</p>
+    <Mailto email={user.email} obfuscated key={user.mail}>
+      <p key={user.name}>{user.name}</p>
     </Mailto>
   ) : (
     <p />

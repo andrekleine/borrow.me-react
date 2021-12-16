@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import { ReactComponent as Eye } from '../../../../misc/images/eye.svg';
 import { ReactComponent as EyeFill } from '../../../../misc/images/eye-fill.svg';
 
+import DeleteBookModal from '../Modals/DeleteBookModal';
+
 import {
   getOneBook,
   deleteOneBook,
@@ -16,6 +18,7 @@ const EyeComponent = ({ bookObj }) => {
 
   const [read, setRead] = useState({});
   const [savedBook, setSavedBook] = useState({});
+  const [showDeleteBookModal, setShowDeleteBookModal] = useState(false);
 
   useEffect(async () => {
     try {
@@ -31,9 +34,7 @@ const EyeComponent = ({ bookObj }) => {
     }
   }, [read]);
 
-  const {
-    title, authors, description, imageLinks, id,
-  } = bookObj;
+  const { title, authors, description, imageLinks, id } = bookObj;
 
   const reqBody = {
     title,
@@ -45,8 +46,7 @@ const EyeComponent = ({ bookObj }) => {
 
   const eyeOnClick = async () => {
     if (read) {
-      await deleteOneBook(savedBook._id, token);
-      setRead(false);
+      setShowDeleteBookModal(!showDeleteBookModal);
     } else {
       const response = await addOneBook(reqBody, token, googleId);
       setSavedBook({ ...response });
@@ -54,10 +54,20 @@ const EyeComponent = ({ bookObj }) => {
     }
   };
 
-  return savedBook && read ? (
-    <EyeFill onClick={eyeOnClick} />
+  return savedBook ? (
+    <div>
+      {read ? <EyeFill onClick={eyeOnClick} /> : <Eye onClick={eyeOnClick} />}
+
+      <DeleteBookModal
+        showDeleteBookModal={showDeleteBookModal}
+        eyeOnClick={eyeOnClick}
+        setShowDeleteBookModal={setShowDeleteBookModal}
+        setRead={setRead}
+        savedBook={savedBook}
+      />
+    </div>
   ) : (
-    <Eye onClick={eyeOnClick} />
+    <p />
   );
 };
 
