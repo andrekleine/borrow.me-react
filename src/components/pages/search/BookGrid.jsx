@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const BookGrid = ({ foundBookObjs }) => {
-  return (
+  return foundBookObjs ? (
     <div className="search-book-grid" key="1">
       {foundBookObjs.map((bookObj) => {
         const imgLinks = bookObj.volumeInfo.imageLinks;
@@ -22,6 +22,13 @@ const BookGrid = ({ foundBookObjs }) => {
           )
         );
       })}
+    </div>
+  ) : (
+    <div>
+      <p className="no-books">
+        No books were found using this combination of words.
+      </p>
+      <p className="no-books">Please try again!</p>
     </div>
   );
 };

@@ -5,7 +5,7 @@ import User from './User';
 
 import { getOneBook } from '../../../../services/api';
 
-const FriendsWhoBorrow = () => {
+const FriendsWhoLend = () => {
   const token = localStorage.getItem('token');
   const { googleId } = useParams();
 
@@ -31,8 +31,8 @@ const FriendsWhoBorrow = () => {
       })}
     </div>
   ) : (
-    <p />
+    <p className="none-friends">None of your friends have this book to lend :´(</p>
   );
 };
 
-export default FriendsWhoBorrow;
+export default FriendsWhoLend;

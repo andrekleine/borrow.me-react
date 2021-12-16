@@ -9,6 +9,8 @@ import BookCover from './BookCover/BookCover';
 import BookTitle from './BookTitle/BookTitle';
 import Authors from './Authors/Authors';
 import Icons from './Icons/Icons';
+import FriendsWhoLend from './FriendsWhoLend/FriendsWhoLend';
+import MyReview from './MyReview/MyReview';
 
 import { getOneGoogleBook } from '../../../services/googleBooks';
 
@@ -34,6 +36,8 @@ const Detail = () => {
         <BookTitle googleBook={googleBook} />
         <Authors googleBook={googleBook} />
         <Icons googleBook={googleBook} />
+        <FriendsWhoLend />
+        <MyReview />
       </div>
     </PrivateTemplate>
   ) : (

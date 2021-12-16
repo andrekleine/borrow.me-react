@@ -83,7 +83,7 @@
 
 .my-review {
     width: 70%;
-    margin-top: 3vh;
+    margin-top: 1.8vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -113,4 +113,10 @@
     position: absolute;
     top: 50%;
     left: 50%;
+}
+
+.none-friends {
+    margin-top: 2vh;
+    text-align: center;
+    width: 60%;
 }
