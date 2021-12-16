@@ -28,8 +28,6 @@ const StarComponent = () => {
     }
   }, []);
 
-  
-
   const reviewOnClick = async () => {
     if (myReview._id) {
       setShowDeleteModal(!showDeleteModal);
