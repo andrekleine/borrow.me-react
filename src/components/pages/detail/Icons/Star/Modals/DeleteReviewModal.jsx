@@ -1,25 +1,25 @@
 import React from 'react';
 import { Modal } from 'react-bootstrap';
 
-import { ReactComponent as XCircleFill } from '../../../../misc/images/x-circle-fill.svg';
-import { ReactComponent as CheckCircleFill } from '../../../../misc/images/check-circle-fill.svg';
+import { ReactComponent as XCircleFill } from '../../../../../misc/images/x-circle-fill.svg';
+import { ReactComponent as CheckCircleFill } from '../../../../../misc/images/check-circle-fill.svg';
 
-import { deleteOneReview } from '../../../../../services/api';
+import { deleteOneReview } from '../../../../../../services/api';
 
 const DeleteReviewModal = ({
-  showDeleteModal,
-  reviewOnClick,
   myReview,
+  setMyReview,
+  showDeleteModal,
   setShowDeleteModal,
-  setHasReview,
+  reviewOnClick,
 }) => {
   const token = localStorage.getItem('token');
 
   const handleSubmit = async () => {
-    if (myReview) {
+    if (myReview._id) {
       await deleteOneReview(myReview._id, token);
-      setShowDeleteModal(!showDeleteModal);
-      setHasReview(false);
+      setMyReview('');
+      setShowDeleteModal(false);
     }
   };
 

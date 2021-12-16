@@ -5,7 +5,7 @@ import User from './User';
 
 import { getOneBook } from '../../../../services/api';
 
-const PeopleBorrow = () => {
+const FriendsWhoBorrow = () => {
   const token = localStorage.getItem('token');
   const { googleId } = useParams();
 
@@ -23,7 +23,11 @@ const PeopleBorrow = () => {
     <div className="friends-who-lend">
       <h5 className="my-review-title">Friends who lend this book:</h5>
       {people.map((person) => {
-        return <User id={person} key={person._id} />;
+        return (
+          <div key={person._id}>
+            <User id={person} />
+          </div>
+        );
       })}
     </div>
   ) : (
@@ -31,4 +35,4 @@ const PeopleBorrow = () => {
   );
 };
 
-export default PeopleBorrow;
+export default FriendsWhoBorrow;

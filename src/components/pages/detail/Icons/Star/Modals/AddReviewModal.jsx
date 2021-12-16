@@ -2,19 +2,20 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Modal } from 'react-bootstrap';
 
-import { ReactComponent as CheckCircleFill } from '../../../../misc/images/check-circle-fill.svg';
-import { ReactComponent as XCircleFill } from '../../../../misc/images/x-circle-fill.svg';
+import { ReactComponent as CheckCircleFill } from '../../../../../misc/images/check-circle-fill.svg';
+import { ReactComponent as XCircleFill } from '../../../../../misc/images/x-circle-fill.svg';
 
-import { addOneReview } from '../../../../../services/api';
+import { addOneReview } from '../../../../../../services/api';
 
 import StarRating from '../Reviews/StarRating';
 import Comments from '../Reviews/Comments';
 
 const AddReviewModal = ({
+  myReview,
+  setMyReview,
   showAddModal,
-  reviewOnClick,
   setShowAddModal,
-  setHasReview,
+  reviewOnClick,
 }) => {
   const token = localStorage.getItem('token');
   const { googleId } = useParams();
@@ -22,10 +23,11 @@ const AddReviewModal = ({
   const [review, setReview] = useState({ stars: null, text: '' });
 
   const handleSubmit = async () => {
-    if (review) {
-      addOneReview(review, token, googleId);
-      setShowAddModal(!showAddModal);
-      setHasReview(true);
+    if (!myReview._id) {
+      const apiAddReview = await addOneReview(review, token, googleId);
+      setMyReview({ ...apiAddReview });
+
+      setShowAddModal(false);
     }
   };
 

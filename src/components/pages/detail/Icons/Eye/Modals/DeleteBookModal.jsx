@@ -1,27 +1,27 @@
 import React from 'react';
 import { Modal } from 'react-bootstrap';
 
-import { ReactComponent as XCircleFill } from '../../../../misc/images/x-circle-fill.svg';
-import { ReactComponent as CheckCircleFill } from '../../../../misc/images/check-circle-fill.svg';
+import { ReactComponent as XCircleFill } from '../../../../../misc/images/x-circle-fill.svg';
+import { ReactComponent as CheckCircleFill } from '../../../../../misc/images/check-circle-fill.svg';
 
-import { deleteOneBook } from '../../../../../services/api';
+import { deleteOneBook } from '../../../../../../services/api';
 
 const DeleteBookModal = ({
   showDeleteBookModal,
-  eyeOnClick,
   setShowDeleteBookModal,
-  setRead,
-  savedBook,
+  eyeOnClick,
+  myBook,
+  setMyBook,
 }) => {
   const token = localStorage.getItem('token');
 
   const handleSubmit = async () => {
-    await deleteOneBook(savedBook._id, token);
-    setRead(false);
+    await deleteOneBook(myBook._id, token);
     setShowDeleteBookModal(false);
+    setMyBook('');
   };
 
-  return savedBook ? (
+  return (
     <Modal show={showDeleteBookModal} onHide={eyeOnClick} className="modal">
       <Modal.Body>
         <div className="del-review-modal-top">
@@ -35,8 +35,6 @@ const DeleteBookModal = ({
         </div>
       </Modal.Body>
     </Modal>
-  ) : (
-    <p />
   );
 };
 

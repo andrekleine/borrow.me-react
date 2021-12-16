@@ -1,11 +1,11 @@
 import React from 'react';
 
-const BookCover = ({ bookObj }) => {
+const BookCover = ({ googleBook }) => {
   return (
     <img
-      src={bookObj.imageLinks.thumbnail}
-      alt={bookObj.title}
-      key={bookObj.id}
+      src={googleBook.imageLinks.thumbnail}
+      alt={googleBook.title}
+      key={googleBook.id}
       className="detail-book-cover"
     />
   );

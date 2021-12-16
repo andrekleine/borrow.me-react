@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Authors = ({ bookObj }) => {
+const Authors = ({ googleBook }) => {
   return (
     <div>
-      {bookObj.authors.map((author) => {
+      {googleBook.authors.map((author) => {
         return (
           <h3 className="detail-author" key={author}>
             {author}

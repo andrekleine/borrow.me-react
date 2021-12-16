@@ -5,13 +5,9 @@ import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
 import 'swiper/swiper.min.css';
 
 const BookSwiper = ({ bookArray }) => {
-  const uniqueArray = bookArray.filter((book, index) => {
-    return index;
-  });
-
   return (
     <Swiper spaceBetween={15} slidesPerView={2.9}>
-      {uniqueArray.map((bookObj, index) => {
+      {bookArray.map((bookObj, index) => {
         const modifier = index;
         return (
           <SwiperSlide key={bookObj.googleID + modifier}>

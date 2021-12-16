@@ -1,47 +1,45 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { Spinner } from 'react-bootstrap';
 
 import './Detail.css';
 
 import PrivateTemplate from '../../templates/Private/PrivateTemplate';
 import BookCover from './BookCover/BookCover';
+import BookTitle from './BookTitle/BookTitle';
 import Authors from './Authors/Authors';
 import Icons from './Icons/Icons';
-import MyReview from './MyReview/MyReview';
-import PeopleBorrow from './PeopleBorrow/PeopleBorrow';
 
 import { getOneGoogleBook } from '../../../services/googleBooks';
 
 const Detail = () => {
   const { googleId } = useParams();
 
-  const [bookObj, setBookObj] = useState({});
-  const [hasReview, setHasReview] = useState();
-  const [peopleBorrow, setPeopleBorrow] = useState();
+  const [googleBook, setGoogleBook] = useState({});
 
   useEffect(async () => {
     try {
-      const response = await getOneGoogleBook(googleId);
-      const { volumeInfo, id } = response;
-      setBookObj({ ...volumeInfo, id });
+      const googleBooksCall = await getOneGoogleBook(googleId);
+      const { volumeInfo, id } = googleBooksCall;
+      setGoogleBook({ ...volumeInfo, id });
     } catch (error) {
       throw new Error({ message: error });
     }
-  }, [peopleBorrow, hasReview]);
+  }, []);
 
-  return bookObj.id && MyReview ? (
+  return googleBook.id ? (
     <PrivateTemplate>
       <div className="container-fluid detail-container">
-        <BookCover bookObj={bookObj} />
-        <h1 className="detail-title">{bookObj.title}</h1>
-        <Authors bookObj={bookObj} />
-        <Icons bookObj={bookObj} setHasReview={setHasReview} />
-        <PeopleBorrow setPeopleBorrow={setPeopleBorrow} />
-        {hasReview && <MyReview />}
+        <BookCover googleBook={googleBook} />
+        <BookTitle googleBook={googleBook} />
+        <Authors googleBook={googleBook} />
+        <Icons googleBook={googleBook} />
       </div>
     </PrivateTemplate>
   ) : (
-    <p />
+    <div className="spinner">
+      <Spinner animation="border" variant="warning" />
+    </div>
   );
 };
 

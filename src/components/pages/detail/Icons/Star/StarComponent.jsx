@@ -6,10 +6,10 @@ import { ReactComponent as Star } from '../../../../misc/images/star.svg';
 
 import { getOneReview } from '../../../../../services/api';
 
-import AddReviewModal from '../Modals/AddReviewModal';
-import DeleteReviewModal from '../Modals/DeleteModal';
+import AddReviewModal from './Modals/AddReviewModal';
+import DeleteReviewModal from './Modals/DeleteReviewModal';
 
-const StarComponent = ({ setHasReview }) => {
+const StarComponent = () => {
   const token = localStorage.getItem('token');
   const { googleId } = useParams();
 
@@ -17,14 +17,18 @@ const StarComponent = ({ setHasReview }) => {
   const [showAddModal, setShowAddModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
+  useEffect(() => {}, [myReview._id]);
+
   useEffect(async () => {
     try {
-      const response = await getOneReview(googleId, token);
-      setMyReview({ ...response[0] });
+      const apiMyReviewCall = await getOneReview(googleId, token);
+      setMyReview({ ...apiMyReviewCall[0] });
     } catch (error) {
       throw new Error({ message: error });
     }
-  }, [showAddModal, showDeleteModal]);
+  }, []);
+
+  
 
   const reviewOnClick = async () => {
     if (myReview._id) {
@@ -34,7 +38,7 @@ const StarComponent = ({ setHasReview }) => {
     }
   };
 
-  return myReview ? (
+  return myReview._id || myReview._id === undefined ? (
     <div>
       {myReview._id ? (
         <StarFill onClick={reviewOnClick} />
@@ -43,17 +47,18 @@ const StarComponent = ({ setHasReview }) => {
       )}
 
       <AddReviewModal
-        setShowAddModal={setShowAddModal}
+        myReview={myReview}
+        setMyReview={setMyReview}
         showAddModal={showAddModal}
+        setShowAddModal={setShowAddModal}
         reviewOnClick={reviewOnClick}
-        setHasReview={setHasReview}
       />
       <DeleteReviewModal
-        showDeleteModal={showDeleteModal}
-        reviewOnClick={reviewOnClick}
         myReview={myReview}
+        setMyReview={setMyReview}
+        showDeleteModal={showDeleteModal}
         setShowDeleteModal={setShowDeleteModal}
-        setHasReview={setHasReview}
+        reviewOnClick={reviewOnClick}
       />
     </div>
   ) : (
