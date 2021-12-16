@@ -11,7 +11,7 @@ const BookGrid = ({ foundBookObjs }) => {
 
         return (
           imgLinks && imgLinks.thumbnail && (
-            <Link to={`/search/${bookId}`}>
+            <Link to={`/search/${bookId}`} key={bookId}>
               <img
                 src={imgLinks.thumbnail}
                 alt={bookTitle}
