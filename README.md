@@ -3,20 +3,22 @@
 This repository keeps the front end application for Borrow.me app.
 
 ## Made with
-* ReactJS
-* Google Books API
+
+- ReactJS
+- Google Books API
 
 ## External libs:
-* React-bootstrap
-* React-dom
-* React-router-dom
-* Axios
-* Bootstrap
-* Formik
-* Prop-types
-* React-simple-star-rating
-* Swiper
-* Yup
+
+- React-bootstrap
+- React-dom
+- React-router-dom
+- Axios
+- Bootstrap
+- Formik
+- Prop-types
+- React-simple-star-rating
+- Swiper
+- Yup
 
 ## App Description
 
@@ -33,28 +35,32 @@ Mobile phone with internet access.
 Access https://borrowme.netlify.app/ from your browser.
 
 If you're not registered in Borrow.me, you'll have to do that by clicking on "Register" in the landing page:
-<!-- <span> -->
-<img align="center" src="https://github.com/andrekleine/borrow.me-react/blob/main/src/components/misc/images/readme/login.png" alt="app screen" height="450"/>
-<!-- </span> -->
+
+<div align="center">
+<img src="https://github.com/andrekleine/borrow.me-react/blob/main/src/components/misc/images/readme/login.png" alt="app screen" height="450"/>
+</div>
 
 ## Made with
-* ReactJS
-* Foursquare: API findPlaces
-* Ironhack: Mongo Rest API
 
+- ReactJS
+- Foursquare: API findPlaces
+- Ironhack: Mongo Rest API
 
 ### External libs:
-* Axios
-* Bootstrap
-* React-bootstrap
-    
+
+- Axios
+- Bootstrap
+- React-bootstrap
+
 ## Authors
 
-* **André Kleine** - [Github](https://github.com/andrekleine) [LinkedIn](https://www.linkedin.com/in/andre-kleine-/)
-* **Renan Bartalo** - [Github](https://github.com/RenanBartalo) [LinkedIn](https://www.linkedin.com/in/renan-bartalo-51709b8a/)
+- **André Kleine** - [Github](https://github.com/andrekleine) [LinkedIn](https://www.linkedin.com/in/andre-kleine-/)
+- **Renan Bartalo** - [Github](https://github.com/RenanBartalo) [LinkedIn](https://www.linkedin.com/in/renan-bartalo-51709b8a/)
 
 ## Acknowledgement
+
 The awesome teachers crew @ Ironhack:
-* Henrique Mendes
-* Henrique Morikawa
-* Flavia Maia
+
+- Henrique Mendes
+- Henrique Morikawa
+- Flavia Maia
