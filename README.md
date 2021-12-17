@@ -39,11 +39,15 @@ If you're not registered in Borrow.me, you'll have to do that by clicking on "Re
 <div align="center">
 <img src="https://github.com/andrekleine/borrow.me-react/blob/main/src/components/misc/images/readme/login.png" alt="app screen" height="450"/>
 <img src="https://github.com/andrekleine/borrow.me-react/blob/main/src/components/misc/images/readme/register.png" alt="app screen" height="450"/>
-
 </div>
 
-<div align="center">
+Once you've logged in, the home page is gonna show a sample of 3 sections. The first one shows the latest books your friends have read. The second, the ones they've added as they "will lend". The third one, the latst books you've added as read to your collection.
+If you click in any of the 3 section names, a new window, with an expanded view of the section, will open.
 
+<div align="center">
+<img src="https://github.com/andrekleine/borrow.me-react/blob/main/src/components/misc/images/readme/home.png" alt="app screen" height="450"/>
+
+<img src="https://github.com/andrekleine/borrow.me-react/blob/main/src/components/misc/images/readme/home.png" alt="app screen" height="450"/>
 </div>
 
 ## Made with
