@@ -71,15 +71,27 @@ Finally, to search for new books, just click on the magnifying glass in the foot
 <img src="https://github.com/andrekleine/borrow.me-react/blob/main/src/components/misc/images/readme/search.png" alt="search screen" height="450"/>
 </div>
 
+## Running Locally
+
+To run this app locally, please follow the below steps:
+
+- Run Borrow.me API locally, as described in https://github.com/andrekleine/borrow.me-api
+- Clone this repository using with **git clone** command in your Terminal
+- Create a .env file in the root path of this project and add the following variable:
+
+```text
+REACT_APP_API_URI=http://localhost:5000/api
+```
+
+- Install dependencies by running `npm install` command:
+- Run project with `npm start`, and it will be available on the PORT defined inside you .env file.
+
 
 ## Author
-
 - **André Kleine** - [Github](https://github.com/andrekleine) [LinkedIn](https://www.linkedin.com/in/andre-kleine-/)
 
 ## Acknowledgement
-
 The awesome teachers crew @ Ironhack:
-
 - Henrique Mendes
 - Henrique Morikawa
 - Flavia Maia
