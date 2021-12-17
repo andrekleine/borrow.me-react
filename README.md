@@ -38,6 +38,13 @@ If you're not registered in Borrow.me, you'll have to do that by clicking on "Re
 
 <div align="center">
 <img src="https://github.com/andrekleine/borrow.me-react/blob/main/src/components/misc/images/readme/login.png" alt="app screen" height="450"/>
+
+</div>
+
+Here you should add your name, e-mail and password to be registered in the app.
+
+<div align="center">
+<img src="https://github.com/andrekleine/borrow.me-react/blob/main/src/components/misc/images/readme/register.png alt="app screen" height="450"/>
 </div>
 
 ## Made with
