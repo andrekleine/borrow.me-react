@@ -63,7 +63,14 @@ To add a review, click on the star. It is gonna be filled.
 To delete a review, click on it again. It will return to the initial state, empty.
 To mark a book as "lendable", click on the book icon. It's gonna be filled. To unmark it, click on it again. It will return to the initial state, empty.
 
-<img src="https://github.com/andrekleine/borrow.me-react/blob/main/src/components/misc/images/readme/detail.png" alt="section screen" height="450"/>
+<div align="center">
+<img src="https://github.com/andrekleine/borrow.me-react/blob/main/src/components/misc/images/readme/icons.png" alt="icons" height="450"/>
+</div>
+
+Finally, to search for new books, just click on the magnifying glass in the footer of the app. A new "search" page is gonna open, where you can search for books by title and/or author name.
+
+<div align="center">
+<img src="https://github.com/andrekleine/borrow.me-react/blob/main/src/components/misc/images/readme/icons.png" alt="icons" height="450"/>
 </div>
 
 
