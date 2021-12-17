@@ -35,7 +35,7 @@ const AddReviewModal = ({
     <Modal show={showAddModal} onHide={reviewOnClick} className="modal">
       <Modal.Body>
         <div className="add-review-modal-top">
-          <XCircleFill type="button" onClick={reviewOnClick} />
+          <XCircleFill onClick={reviewOnClick} />
         </div>
         <div className="add-review-modal-middle">
           <h1 className="review-modal-title">Add a review:</h1>
@@ -44,7 +44,7 @@ const AddReviewModal = ({
         </div>
         <div className="add-review-modal-bottom">
           <h1 className="review-modal-title-add">Add!</h1>
-          <CheckCircleFill type="button" onClick={handleSubmit} />
+          <CheckCircleFill onClick={handleSubmit} />
         </div>
       </Modal.Body>
     </Modal>
