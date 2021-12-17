@@ -33,9 +33,9 @@ Mobile phone with internet access.
 Access https://borrowme.netlify.app/ from your browser.
 
 If you're not registered in Borrow.me, you'll have to do that by clicking on "Register" in the landing page:
-<span>
+<!-- <span> -->
 <img src="https://github.com/andrekleine/borrow.me-react/blob/main/src/components/misc/images/readme/login.png" alt="app screen" height="450"/>
-</span>
+<!-- </span> -->
 
 ## Made with
 * ReactJS
