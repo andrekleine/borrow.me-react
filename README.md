@@ -56,6 +56,16 @@ Also, if you have already added a review to this book, it is gonna show right be
 <img src="https://github.com/andrekleine/borrow.me-react/blob/main/src/components/misc/images/readme/detail.png" alt="section screen" height="450"/>
 </div>
 
+The icons in the detail page are the key of the app's functionality.
+To add a book as "read" to your collection, click on the eye. It is gonna be filled.
+To delete a book, click on it again. It will return to the initial state, empty.
+To add a review, click on the star. It is gonna be filled.
+To delete a review, click on it again. It will return to the initial state, empty.
+To mark a book as "lendable", click on the book icon. It's gonna be filled. To unmark it, click on it again. It will return to the initial state, empty.
+
+<img src="https://github.com/andrekleine/borrow.me-react/blob/main/src/components/misc/images/readme/detail.png" alt="section screen" height="450"/>
+</div>
+
 
 ## Author
 
