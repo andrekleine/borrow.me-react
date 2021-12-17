@@ -30,8 +30,8 @@ const DeleteBookModal = ({
           </h1>
         </div>
         <div className="del-review-modal-middle">
-          <XCircleFill type="button" onClick={eyeOnClick} />
-          <CheckCircleFill type="button" onClick={handleSubmit} />
+          <XCircleFill onClick={eyeOnClick} />
+          <CheckCircleFill onClick={handleSubmit} />
         </div>
       </Modal.Body>
     </Modal>

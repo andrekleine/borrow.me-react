@@ -42,8 +42,8 @@ const AddBookModal = ({
           <h1 className="delete-modal-title">Did you read this book?</h1>
         </div>
         <div className="del-review-modal-middle">
-          <XCircleFill type="button" onClick={eyeOnClick} />
-          <CheckCircleFill type="button" onClick={handleSubmit} />
+          <XCircleFill onClick={eyeOnClick} className="icon" />
+          <CheckCircleFill onClick={handleSubmit} />
         </div>
       </Modal.Body>
     </Modal>
