@@ -2,8 +2,11 @@
 
 This repository keeps the front end application for Borrow.me app.
 
-## Stack
-* React
+## Made with
+* ReactJS
+* Google Books API
+
+## External libs:
 * React-bootstrap
 * React-dom
 * React-router-dom
@@ -17,7 +20,9 @@ This repository keeps the front end application for Borrow.me app.
 
 ## App Description
 
-My Favorites is the ideal app to keep in your "wallet" those places, products and services that you enjoy so much and you don't want to forget about - or always want to remember!
+Borrow.me is a social networl based on books. Its main focus is on finding out people who would lend (or trade) books. So the app will show you these people and the books they would like to trade with you.
+A secondary function of the app is to keep a book reading diary, so you can add the books you've already read, and add reviews to them.
+You can also check the reviews on the latest books your friends have read.
 
 ### Requirements
 
@@ -25,13 +30,11 @@ Mobile phone with internet access.
 
 ### How to use it
 
-Just go to https://my-favorits.netlify.app/
+Access https://borrowme.netlify.app/ from your browser.
 
+If you're not registered in Borrow.me, you'll have to do that by clicking on "Register" in the landing page:
 <span>
-<img src="https://github.com/andrekleine/frontend-react-app-complete-CRUD/blob/main/src/components/AppImgs/home.png" alt="app screen" height="450"/>
-<img src="https://github.com/andrekleine/frontend-react-app-complete-CRUD/blob/main/src/components/AppImgs/list.png" alt="app screen" height="450"/>
-<img src="https://github.com/andrekleine/frontend-react-app-complete-CRUD/blob/main/src/components/AppImgs/details.png" alt="app screen" height="450"/>
-<img src="https://github.com/andrekleine/frontend-react-app-complete-CRUD/blob/main/src/components/AppImgs/favs.png" alt="app screen" height="450"/>
+<img src="https://github.com/andrekleine/borrow.me-react/blob/main/src/components/misc/images/readme/login.png" alt="app screen" height="450"/>
 </span>
 
 ## Made with
