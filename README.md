@@ -37,17 +37,17 @@ Access https://borrowme.netlify.app/ from your browser.
 If you're not registered in Borrow.me, you'll have to do that by clicking on "Register" in the landing page. The, you should add your name, e-mail and password to be registered in the app.
 
 <div align="center">
-<img src="https://github.com/andrekleine/borrow.me-react/blob/main/src/components/misc/images/readme/login.png" alt="app screen" height="450"/>
-<img src="https://github.com/andrekleine/borrow.me-react/blob/main/src/components/misc/images/readme/register.png" alt="app screen" height="450"/>
+<img src="https://github.com/andrekleine/borrow.me-react/blob/main/src/components/misc/images/readme/login.png" alt="login screen" height="450"/>
+<img src="https://github.com/andrekleine/borrow.me-react/blob/main/src/components/misc/images/readme/register.png" alt="register screen" height="450"/>
 </div>
 
 Once you've logged in, the home page is gonna show a sample of 3 sections. The first one shows the latest books your friends have read. The second, the ones they've added as they "will lend". The third one, the latst books you've added as read to your collection.
 If you click in any of the 3 section names, a new window, with an expanded view of the section, will open.
 
 <div align="center">
-<img src="https://github.com/andrekleine/borrow.me-react/blob/main/src/components/misc/images/readme/home.png" alt="app screen" height="450"/>
+<img src="https://github.com/andrekleine/borrow.me-react/blob/main/src/components/misc/images/readme/home.png" alt="home screen" height="450"/>
 
-<img src="https://github.com/andrekleine/borrow.me-react/blob/main/src/components/misc/images/readme/home.png" alt="app screen" height="450"/>
+<img src="https://github.com/andrekleine/borrow.me-react/blob/main/src/components/misc/images/readme/section.png" alt="section screen" height="450"/>
 </div>
 
 ## Made with
