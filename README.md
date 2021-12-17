@@ -50,6 +50,13 @@ If you click in any of the 3 section names, a new window, with an expanded view 
 <img src="https://github.com/andrekleine/borrow.me-react/blob/main/src/components/misc/images/readme/section.png" alt="section screen" height="450"/>
 </div>
 
+Anytime you click in a book cover, a detail page is gonna open. Besides the book's information, it indicates the people who are gonna lend this book. Their name are links to their e-mail addresses.
+Also, if you have already added a review to this book, it is gonna show right below.
+<div align="center">
+<img src="https://github.com/andrekleine/borrow.me-react/blob/main/src/components/misc/images/readme/detail.png" alt="section screen" height="450"/>
+</div>
+
+
 ## Author
 
 - **André Kleine** - [Github](https://github.com/andrekleine) [LinkedIn](https://www.linkedin.com/in/andre-kleine-/)
