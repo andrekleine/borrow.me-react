@@ -25,7 +25,7 @@ const FriendsWhoLend = () => {
       {people.map((person) => {
         return (
           <div key={person._id}>
-            <User id={person} />
+            <User id={person} key={person} />
           </div>
         );
       })}
