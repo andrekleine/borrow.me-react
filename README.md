@@ -1,4 +1,21 @@
-# My Favorites App
+# Borrow.me App - Front End Application
+
+This repository keeps the front end application for Borrow.me app.
+
+## Stack
+* React
+* React-bootstrap
+* React-dom
+* React-router-dom
+* Axios
+* Bootstrap
+* Formik
+* Prop-types
+* React-simple-star-rating
+* Swiper
+* Yup
+
+## App Description
 
 My Favorites is the ideal app to keep in your "wallet" those places, products and services that you enjoy so much and you don't want to forget about - or always want to remember!
 
