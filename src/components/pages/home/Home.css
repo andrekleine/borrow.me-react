@@ -30,7 +30,11 @@
     height: 20vh;
 }
 
-.no-books {    
+.no-books {
     margin: 10%;
     text-align: center;
+}
+
+.section-name-link {
+    text-decoration: none;
 }

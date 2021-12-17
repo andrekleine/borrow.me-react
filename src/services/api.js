@@ -105,3 +105,24 @@ export const findUserById = async (userId) => {
 
   return response.data;
 };
+
+// "New From Friends" section
+export const newFromFriends = async (token) => {
+  const response = await api.get('/books/new-books-friends', setHeaders(token));
+
+  return response.data;
+};
+
+// "Friends Will Lend" section
+export const friendsWillLend = async (token) => {
+  const response = await api.get('/books/friends-will-lend', setHeaders(token));
+
+  return response.data;
+};
+
+// "I Read Recently" section
+export const readRecently = async (token) => {
+  const response = await api.get('/books/read-recently', setHeaders(token));
+
+  return response.data;
+};
