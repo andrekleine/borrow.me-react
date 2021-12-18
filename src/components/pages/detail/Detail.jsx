@@ -18,7 +18,7 @@ const Detail = () => {
   const { googleId } = useParams();
 
   const [googleBook, setGoogleBook] = useState({});
-  const [showReview, setShowReview] = useState();
+  const [showReview, setShowReview] = useState(true);
 
   useEffect(async () => {
     try {
