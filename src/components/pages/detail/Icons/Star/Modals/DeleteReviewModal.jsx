@@ -12,6 +12,7 @@ const DeleteReviewModal = ({
   showDeleteModal,
   setShowDeleteModal,
   reviewOnClick,
+  setShowReview,
 }) => {
   const token = localStorage.getItem('token');
 
@@ -20,6 +21,7 @@ const DeleteReviewModal = ({
       await deleteOneReview(myReview._id, token);
       setMyReview('');
       setShowDeleteModal(false);
+      setShowReview(false);
     }
   };
 

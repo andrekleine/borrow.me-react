@@ -16,6 +16,7 @@ const AddReviewModal = ({
   showAddModal,
   setShowAddModal,
   reviewOnClick,
+  setShowReview,
 }) => {
   const token = localStorage.getItem('token');
   const { googleId } = useParams();
@@ -26,7 +27,7 @@ const AddReviewModal = ({
     if (!myReview._id) {
       const apiAddReview = await addOneReview(review, token, googleId);
       setMyReview({ ...apiAddReview });
-
+      setShowReview(true);
       setShowAddModal(false);
     }
   };

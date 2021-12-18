@@ -7,7 +7,7 @@ import StarComponent from './Star/StarComponent';
 
 import { getOneBook } from '../../../../services/api';
 
-const Icons = ({ googleBook }) => {
+const Icons = ({ googleBook, setShowReview }) => {
   const { googleId } = useParams();
   const token = localStorage.getItem('token');
 
@@ -29,7 +29,7 @@ const Icons = ({ googleBook }) => {
         myBook={myBook}
         setMyBook={setMyBook}
       />
-      <StarComponent />
+      <StarComponent setShowReview={setShowReview} />
       <BookComponent myBook={myBook} setMyBook={setMyBook} />
     </div>
   );

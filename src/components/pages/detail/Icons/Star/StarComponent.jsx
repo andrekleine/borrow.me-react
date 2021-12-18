@@ -9,7 +9,7 @@ import { getOneReview } from '../../../../../services/api';
 import AddReviewModal from './Modals/AddReviewModal';
 import DeleteReviewModal from './Modals/DeleteReviewModal';
 
-const StarComponent = () => {
+const StarComponent = ({ setShowReview }) => {
   const token = localStorage.getItem('token');
   const { googleId } = useParams();
 
@@ -50,6 +50,7 @@ const StarComponent = () => {
         showAddModal={showAddModal}
         setShowAddModal={setShowAddModal}
         reviewOnClick={reviewOnClick}
+        setShowReview={setShowReview}
       />
       <DeleteReviewModal
         myReview={myReview}
@@ -57,6 +58,7 @@ const StarComponent = () => {
         showDeleteModal={showDeleteModal}
         setShowDeleteModal={setShowDeleteModal}
         reviewOnClick={reviewOnClick}
+        setShowReview={setShowReview}
       />
     </div>
   ) : (

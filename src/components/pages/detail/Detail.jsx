@@ -18,6 +18,7 @@ const Detail = () => {
   const { googleId } = useParams();
 
   const [googleBook, setGoogleBook] = useState({});
+  const [showReview, setShowReview] = useState();
 
   useEffect(async () => {
     try {
@@ -35,9 +36,9 @@ const Detail = () => {
         <BookCover googleBook={googleBook} />
         <BookTitle googleBook={googleBook} />
         <Authors googleBook={googleBook} />
-        <Icons googleBook={googleBook} />
+        <Icons googleBook={googleBook} setShowReview={setShowReview} />
         <FriendsWhoLend />
-        <MyReview />
+        {showReview && <MyReview />}
       </div>
     </PrivateTemplate>
   ) : (
