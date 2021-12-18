@@ -37,8 +37,8 @@ const Detail = () => {
         <BookTitle googleBook={googleBook} />
         <Authors googleBook={googleBook} />
         <Icons googleBook={googleBook} setShowReview={setShowReview} />
-        <FriendsWhoLend />
         {showReview && <MyReview />}
+        <FriendsWhoLend />
       </div>
     </PrivateTemplate>
   ) : (
