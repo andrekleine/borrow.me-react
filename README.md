@@ -1,4 +1,4 @@
-# Borrow.me App - Front End Application
+# Borrow.me App - Mobile Front End Application
 
 This repository keeps the front end application for Borrow.me app.
 
