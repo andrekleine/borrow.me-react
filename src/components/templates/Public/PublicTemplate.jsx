@@ -1,11 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import './PublicTemplate.css';
 
 const PublicTemplate = ({ children }) => (
   <div className="public-template-container">
-    <h1 className="public-template-title">Borrow.me</h1>
+    <Link className="link" to="/">
+      <h1 className="public-template-title">Borrow.me</h1>
+    </Link>
     <h3 className="public-template-subtitle">
       Connect with people and books in a great community
     </h3>

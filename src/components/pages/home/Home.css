@@ -5,8 +5,11 @@
     margin: 20px 10px 8px;
 }
 
-.home-content {
+.home-content {    
     margin-top: 9vh;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
 }
 
 .book-container-width {

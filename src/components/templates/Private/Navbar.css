@@ -11,7 +11,11 @@
     z-index: 300;
 }
 
-.navbar-title {
+.navbar-title,
+.navbar-title:link,
+.navbar-title:visited,
+.navbar-title:hover,
+.navbar-title:active {
     font-family: Henny Penny;
     font-size: 2.5rem;
     color: #F2A341;

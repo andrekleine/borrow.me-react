@@ -3,6 +3,7 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+
 }
 
 .public-template-title {
@@ -21,4 +22,8 @@
     font-weight: bold;
     color: #730217;
     text-align: center;
+}
+
+.link {
+    text-decoration: none;
 }

@@ -26,7 +26,7 @@ const Home = () => {
 
   return (
     <PrivateTemplate>
-      <div className="home-content">
+      <div className="home-content container-fluid">
         <SectionRow title="New from friends" bookArray={lastBooksReadFriends} />
         <SectionRow
           title="Friends will lend"

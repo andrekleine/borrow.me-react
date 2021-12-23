@@ -9,7 +9,7 @@ const SectionRow = ({ title, bookArray }) => {
       <Link to={`/section/${title}`} className="section-name-link">
         <h1 className="section-title">{title}</h1>
       </Link>
-      <div className="container book-swiper-row">
+      <div className="container-fluid book-swiper-row">
         <BookSwiper bookArray={bookArray} />
       </div>
     </div>
