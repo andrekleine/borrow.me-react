@@ -2,23 +2,23 @@
     background-color: #D9C2A7;
     height: 100vh;
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
 }
 
 .public-template-title {
     font-family: Henny Penny;
-    font-size: 4rem;    
+    font-size: 4rem;
     color: #8C6542;
     -webkit-text-stroke: #730217 1.2px;
     margin-top: 15vh;
-    text-align: center;    
+    text-align: center;
 }
 
 .public-template-subtitle {
-    margin: 9vw;
+    margin: 7vh;
     font-family: Roboto;
     font-size: 1.2rem;
     font-weight: bold;
     color: #730217;
-    text-align: center;    
+    text-align: center;
 }
