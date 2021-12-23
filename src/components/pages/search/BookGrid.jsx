@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const BookGrid = ({ foundBookObjs }) => {
   return foundBookObjs ? (
-    <div className="search-book-grid" key="1">
+    <div className="row" key="1">
       {foundBookObjs.map((bookObj) => {
         const imgLinks = bookObj.volumeInfo.imageLinks;
         const bookTitle = bookObj.volumeInfo.title;
@@ -11,14 +11,18 @@ const BookGrid = ({ foundBookObjs }) => {
 
         return (
           imgLinks && imgLinks.thumbnail && (
-            <Link to={`/search/${bookId}`} key={bookId}>
-              <img
-                src={imgLinks.thumbnail}
-                alt={bookTitle}
-                key={bookId}
-                className="search-book-cover"
-              />
-            </Link>
+            <div className="col-4" key={bookId}>
+              <div className="book-cover-container">
+                <Link to={`/search/${bookId}`} key={bookId}>
+                  <img
+                    src={imgLinks.thumbnail}
+                    alt={bookTitle}
+                    key={bookId}
+                    className="search-book-cover"
+                  />
+                </Link>
+              </div>
+            </div>
           )
         );
       })}

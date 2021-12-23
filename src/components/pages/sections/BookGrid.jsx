@@ -26,20 +26,24 @@ const BookGrid = ({ sectionName }) => {
   }, []);
 
   return foundBookObjs ? (
-    <div className="section-book-grid" key="1">
+    <div className="row" key="1">
       {foundBookObjs.map((bookObj) => {
         const { imgLink, googleID, title } = bookObj;
 
         return (
           imgLink && (
-            <Link to={`/search/${googleID}`} key={googleID}>
-              <img
-                src={imgLink}
-                alt={title}
-                key={googleID}
-                className="search-book-cover"
-              />
-            </Link>
+            <div className="col-4" key={googleID}>
+              <div className="book-cover-container">
+                <Link to={`/search/${googleID}`} key={googleID}>
+                  <img
+                    src={imgLink}
+                    alt={title}
+                    key={googleID}
+                    className="search-book-cover"
+                  />
+                </Link>
+              </div>
+            </div>
           )
         );
       })}

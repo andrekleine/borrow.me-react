@@ -9,6 +9,7 @@
     border-radius: 5px;
     height: 4vh;
     width: 60vw;
+    max-width: 350px;
     padding-left: 10px;
     margin-top: 10px;
 }
@@ -17,6 +18,7 @@
     margin-top: 10px;    
     margin-bottom: 20px;    
     width: 30vw;
+    max-width: 150px;
     height: 4.5vh;
     background: #F2A341;
     border-radius: 5px;

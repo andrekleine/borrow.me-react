@@ -40,7 +40,7 @@ const Search = () => {
 
   return (
     <PrivateTemplate>
-      <div className="container search-container">
+      <div className="container-fluid search-container">
         <h1 className="search-title">
           Find books by title and/or by author name:
         </h1>

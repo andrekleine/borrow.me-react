@@ -11,7 +11,7 @@ const Section = () => {
 
   return (
     <PrivateTemplate>
-      <div className="section container-fluid">
+      <div className="search-container container-fluid">
         <h1>{sectionName}</h1>
         <BookGrid sectionName={sectionName} />
       </div>
