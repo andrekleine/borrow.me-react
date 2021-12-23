@@ -11,6 +11,7 @@
 
 .detail-book-cover {
     width: 65vw;
+    max-width: 250px;
 }
 
 .detail-title,
@@ -33,6 +34,7 @@
     display: flex;
     justify-content: space-between;
     width: 70%;
+    max-width: 350px;
     margin-top: 1vh;
 }
 
@@ -69,7 +71,7 @@
 }
 
 .delete-modal-title {
-    font-size: 5.5vw;
+    font-size: 2em;    
 }
 
 .del-review-modal-middle {
@@ -83,7 +85,7 @@
 
 .my-review {
     width: 70%;
-    margin-top: 1.8vh;
+    margin-top: 3vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -103,7 +105,7 @@
 }
 
 .friends-who-lend {
-    margin-top: 3vh;
+    margin-top: 1vh;
     display: flex;
     flex-direction: column;
     align-items: center;
